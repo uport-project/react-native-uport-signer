@@ -7,10 +7,12 @@ buildscript {
 
     dependencies {
         classpath 'com.android.tools.build:gradle:3.1.4'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.2.61"
     }
 }
 
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 27
@@ -31,6 +33,10 @@ repositories {
     mavenCentral()
     google()
     jcenter()
+    maven {
+        // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
+        url "$rootDir/../node_modules/react-native/android"
+    }
     maven { url 'https://jitpack.io' }
 }
 
