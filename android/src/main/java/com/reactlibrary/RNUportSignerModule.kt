@@ -16,17 +16,10 @@ import com.uport.sdk.signer.UportSigner.Companion.asSeedLabel
 import com.uport.sdk.signer.encryption.KeyProtection.Level
 import com.uport.sdk.signer.keyToBase64
 
-class RNUportSignerModule(private val reactContext: ReactApplicationContext) : ReactContextBaseJavaModule(reactContext) {
-
-    override fun getName(): String {
-        return "RNUportSigner"
-    }
-}
-
-open class NativeSignerModule(reactContext: ReactApplicationContext?)
+open class RNUportSignerModule(reactContext: ReactApplicationContext?)
     : ReactContextBaseJavaModule(reactContext) {
 
-    override fun getName(): String = "NativeSignerModule"
+    override fun getName(): String = "RNUportSignerModule"
 
     @ReactMethod
     fun hasSecureKeyguard(promise: Promise) {
