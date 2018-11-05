@@ -17,6 +17,7 @@ public class RNUportSignerPackage implements ReactPackage {
       List<NativeModule> modules = new ArrayList<>();
 
       modules.add(new RNUportSignerModule(reactContext));
+      modules.add(new RNUportHDSignerModule(reactContext));
       return modules;
     }
 
