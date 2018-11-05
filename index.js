@@ -3,4 +3,4 @@ import { NativeModules } from 'react-native';
 
 const RNUportSigner = NativeModules.RNUportSignerModule;
 const RNUportHDSigner = NativeModules.RNUportHDSignerModule;
-export default { RNUportSigner, RNUportHDSigner };
+export { RNUportSigner, RNUportHDSigner };
