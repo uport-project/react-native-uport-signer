@@ -12,6 +12,7 @@ import com.uport.sdk.signer.encryption.KeyProtection.Level
 import com.uport.sdk.signer.keyToBase64
 import org.kethereum.bip32.generateKey
 import org.kethereum.bip39.Mnemonic
+import java.util.HashMap
 
 
 /**
@@ -21,6 +22,12 @@ class RNUportHDSignerModule(reactContext: ReactApplicationContext?)
     : RNUportSignerModule(reactContext) {
 
     override fun getName(): String = "RNUportHDSignerModule"
+
+    override fun getConstants(): Map<String, Any>? {
+        val constants = HashMap<String, Any>()
+        constants["UPORT_ROOT_DERIVATION_PATH"] = UportHDSigner.UPORT_ROOT_DERIVATION_PATH
+        return constants
+    }
 
     //hd signer methods
     @ReactMethod
