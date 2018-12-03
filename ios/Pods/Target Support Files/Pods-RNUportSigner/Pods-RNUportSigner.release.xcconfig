@@ -1,0 +1,11 @@
+CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES
+FRAMEWORK_SEARCH_PATHS = $(inherited) /Applications/Xcode.app/Contents/Developer/Library/Frameworks
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = "${PODS_TARGET_SRCROOT}/openssl/include" "${PODS_ROOT}/CoreEthereum/openssl/include" $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/CoreEthereum" "${PODS_ROOT}/Headers/Public/ISO8601DateFormatter" "${PODS_ROOT}/Headers/Public/UPTEthereumSigner" "${PODS_ROOT}/Headers/Public/Valet"
+LIBRARY_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/CoreEthereum" "$PODS_CONFIGURATION_BUILD_DIR/ISO8601DateFormatter" "$PODS_CONFIGURATION_BUILD_DIR/UPTEthereumSigner" "$PODS_CONFIGURATION_BUILD_DIR/Valet"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/CoreEthereum" -isystem "${PODS_ROOT}/Headers/Public/ISO8601DateFormatter" -isystem "${PODS_ROOT}/Headers/Public/UPTEthereumSigner" -isystem "${PODS_ROOT}/Headers/Public/Valet"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"CoreEthereum" -l"ISO8601DateFormatter" -l"UPTEthereumSigner" -l"Valet" -framework "AVFoundation" -framework "CoreEthereum" -framework "Foundation" -framework "Security"
+PODS_BUILD_DIR = $BUILD_DIR
+PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
+PODS_PODFILE_DIR_PATH = ${SRCROOT}/.
+PODS_ROOT = ${SRCROOT}/Pods

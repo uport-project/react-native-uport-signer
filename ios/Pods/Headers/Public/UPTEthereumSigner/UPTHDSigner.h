@@ -1,0 +1,1 @@
+../../../UPTEthereumSigner/UPTEthereumSigner/Classes/UPTHDSigner.h
