@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		695EE3DA21B5E1240022E7B0 /* RNUportSigner.m in Sources */ = {isa = PBXBuildFile; fileRef = 695EE3D921B5E1240022E7B0 /* RNUportSigner.m */; };
 		69F07C7B21B1E60A009F7F08 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F07C5921B1E521009F7F08 /* libReact.a */; };
+		8664B1DB7D1BC8ED25473BE1 /* Pods_RNUportSigner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF3C966653610BA64D70B6BC /* Pods_RNUportSigner.framework */; };
 		B3E7B58A1CC2AC0600A0062D /* RNUportHDSigner.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RNUportHDSigner.m */; };
 /* End PBXBuildFile section */
 
@@ -143,12 +144,12 @@
 		134814201AA4EA6300B7C361 /* libRNUportSigner.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNUportSigner.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D98D9C95373FFD2E429941C /* Pods-RNUportSigner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNUportSigner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RNUportSigner/Pods-RNUportSigner.debug.xcconfig"; sourceTree = "<group>"; };
 		3AEB8D79E24E0E10C020B53A /* Pods-RNUportSigner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNUportSigner.release.xcconfig"; path = "Pods/Target Support Files/Pods-RNUportSigner/Pods-RNUportSigner.release.xcconfig"; sourceTree = "<group>"; };
-		463040D707BCD9A3A6E32682 /* libPods-RNUportSigner.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNUportSigner.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		695EE3D921B5E1240022E7B0 /* RNUportSigner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNUportSigner.m; sourceTree = SOURCE_ROOT; };
 		695EE3EB21B5E1880022E7B0 /* RNUportSigner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNUportSigner.h; sourceTree = "<group>"; };
 		69F07C4521B1E521009F7F08 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		B3E7B5881CC2AC0600A0062D /* RNUportHDSigner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNUportHDSigner.h; sourceTree = "<group>"; };
 		B3E7B5891CC2AC0600A0062D /* RNUportHDSigner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNUportHDSigner.m; sourceTree = "<group>"; };
+		DF3C966653610BA64D70B6BC /* Pods_RNUportSigner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RNUportSigner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +158,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				69F07C7B21B1E60A009F7F08 /* libReact.a in Frameworks */,
+				8664B1DB7D1BC8ED25473BE1 /* Pods_RNUportSigner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,7 +221,7 @@
 		69F07C7A21B1E60A009F7F08 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				463040D707BCD9A3A6E32682 /* libPods-RNUportSigner.a */,
+				DF3C966653610BA64D70B6BC /* Pods_RNUportSigner.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

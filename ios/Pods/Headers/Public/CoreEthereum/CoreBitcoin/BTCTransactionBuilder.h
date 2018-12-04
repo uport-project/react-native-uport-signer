@@ -1,1 +1,0 @@
-../../../../CoreEthereum/CoreBitcoin/BTCTransactionBuilder.h
