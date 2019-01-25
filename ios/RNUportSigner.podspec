@@ -1,23 +1,19 @@
-
 Pod::Spec.new do |s|
-  s.name         = "react-native-uport-signer"
-  s.version      = "1.0.0"
-  s.summary      = "Ethereum signer for react native"
-  s.description  = <<-DESC
-                  RNUportSigner
-                   DESC
-  s.homepage     = ""
-  s.license      = "MIT"
-  # s.license    = { :type => "MIT", :file => "FILE_LICENSE" }
-  s.author       = { "author" => "author@domain.cn" }
-  s.platform     = :ios, "7.0"
-  s.source       = { git: "https://github.com/author/RNUportSigner.git", tag: "s.version" }
-  s.source_files  = "RNUportSigner/**/*.{h,m}"
+  s.name         = "RNUportSigner"
+  s.author       = { "Aldi Gjoka" => "aldi.gjoka@consensys.net" }
+
+  s.version      = "0.1.0"
+  s.summary      = "Native modules for signing ethereum transactions and uport JWTs"
+  s.license      = "Apache"
+
+  s.homepage     = "https://github.com/uport-project/react-native-uport-signer"
+  s.source       = { git: "https://github.com/uport-project/react-native-uport-signer.git", :tag => "#{s.version}" }
+
   s.requires_arc = true
+  s.source_files  = "./RNUportSigner/*"
+  s.platform     = :ios, "9.0"
 
   s.dependency "React"
-  s.dependency "UPTEThereumSigner"
+  s.dependency "UPTEthereumSigner"
 
 end
-
-  
