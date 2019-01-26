@@ -10,7 +10,8 @@ Pod::Spec.new do |s|
   s.source       = { git: "https://github.com/uport-project/react-native-uport-signer.git", :tag => "#{s.version}" }
 
   s.requires_arc = true
-  s.source_files  = "./RNUportSigner/*"
+  s.source_files = [ "ios/RNUportSigner/*.h", "ios/RNUportSigner/*.m"]
+  s.source = {:path => "./RNUportSigner"}
   s.platform     = :ios, "9.0"
 
   s.dependency "React"
