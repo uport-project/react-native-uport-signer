@@ -23,11 +23,12 @@
 #import "CoreBitcoin/CoreBitcoin+Categories.h"
 #import <CoreEthereum/openssl/include/openssl/rand.h>
 #import "UPTEthereumSigner.h"
+#import <React/RCTDefines.h>
 //#import "UPTEthSigner+Utils.h"
 
 @implementation RNUportSigner
 
-RCT_EXPORT_MODULE(NativeSignerModule);
+RCT_EXPORT_MODULE(RNUportSignerModule);
 
 RCT_EXPORT_METHOD(createKeyPair:(NSString *)storageLevel resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject){
     UPTEthKeychainProtectionLevel enumStorageLevel = [UPTEthereumSigner enumStorageLevelWithStorageLevel:storageLevel];

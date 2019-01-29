@@ -7,5 +7,6 @@ target 'RNUportSigner' do
 
   # Pods for RNUportSigner
   pod 'UPTEthereumSigner'
+  # pod 'CoreEthereum'
 
 end

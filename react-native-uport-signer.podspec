@@ -14,5 +14,4 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "10.0"
 
   s.dependency "UPTEthereumSigner"
-  s.dependency "React"
 end
