@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4CFEC7DD3F11C32F012594D7 /* libPods-RNUportSigner.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C6A72B89D2D4CE04318AA54 /* libPods-RNUportSigner.a */; };
 		B3E7B58A1CC2AC0600A0062D /* RNUportSigner.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RNUportSigner.m */; };
 		C8796B0521FFB52F004EB8E1 /* libCoreEthereum.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8796B0421FFB52F004EB8E1 /* libCoreEthereum.a */; };
 		C8796B0721FFB546004EB8E1 /* libUPTEthereumSigner.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8796B0621FFB546004EB8E1 /* libUPTEthereumSigner.a */; };
@@ -148,7 +149,6 @@
 		5C6A72B89D2D4CE04318AA54 /* libPods-RNUportSigner.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNUportSigner.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3E7B5881CC2AC0600A0062D /* RNUportSigner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNUportSigner.h; sourceTree = "<group>"; };
 		B3E7B5891CC2AC0600A0062D /* RNUportSigner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNUportSigner.m; sourceTree = "<group>"; };
-		BE465FFF43DC99FC9189B180 /* Pods_RNUportSigner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RNUportSigner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C76375F975B3A061DFA13B0E /* Pods-RNUportSigner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNUportSigner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RNUportSigner/Pods-RNUportSigner.debug.xcconfig"; sourceTree = "<group>"; };
 		C864D91F21FB9C9100DDB008 /* libCoreEthereum.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCoreEthereum.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C864D92121FB9C9500DDB008 /* libUPTEthereumSigner.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libUPTEthereumSigner.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -173,6 +173,7 @@
 				C8796B0921FFB54A004EB8E1 /* libValet.a in Frameworks */,
 				C8796B0721FFB546004EB8E1 /* libUPTEthereumSigner.a in Frameworks */,
 				C8796B0521FFB52F004EB8E1 /* libCoreEthereum.a in Frameworks */,
+				4CFEC7DD3F11C32F012594D7 /* libPods-RNUportSigner.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,7 +224,6 @@
 				C864D92121FB9C9500DDB008 /* libUPTEthereumSigner.a */,
 				C864D91F21FB9C9100DDB008 /* libCoreEthereum.a */,
 				30D30C57A394A138520F8C54 /* libPods-RNUportSigner.a */,
-				BE465FFF43DC99FC9189B180 /* Pods_RNUportSigner.framework */,
 				5C6A72B89D2D4CE04318AA54 /* libPods-RNUportSigner.a */,
 			);
 			name = Frameworks;
