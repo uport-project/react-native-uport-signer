@@ -24,7 +24,6 @@
 #import <CoreEthereum/openssl/include/openssl/rand.h>
 #import "UPTEthereumSigner.h"
 #import <React/RCTDefines.h>
-//#import "UPTEthSigner+Utils.h"
 
 @implementation RNUportSigner
 
@@ -80,7 +79,7 @@ RCT_EXPORT_METHOD(signTx:(NSString *)ethAddress data:(NSString *)payload userPro
 
 RCT_EXPORT_METHOD(signJwt:(NSString *)ethAddress data:(NSString *)payload userPrompt:(NSString*)userPromptText resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject){
     NSData *payloadData = [[NSData alloc] initWithBase64EncodedString:payload options:NSDataBase64DecodingIgnoreUnknownCharacters];
-    [UPTEthereumSigner signJwt:ethAddress userPrompt:userPromptText data:payloadData result:^(NSData *signature, NSError *error) {
+    [UPTEthereumSigner signJwt:ethAddress userPrompt:userPromptText data:payloadData result:^(NSDictionary *signature, NSError *error) {
         if ( !error ) {
             resolve(signature);
         } else {
