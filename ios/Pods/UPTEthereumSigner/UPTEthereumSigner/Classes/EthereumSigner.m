@@ -59,6 +59,18 @@ NSDictionary *ethereumSignature(BTCKey *keypair, NSData *hash, NSData *chainId) 
     return signatureDictionary;
 }
 
+NSDictionary *jwtSignature(BTCKey *keypair, NSData *hash) {
+    NSDictionary *sig = genericSignature(keypair, hash, NO);
+    if (sig == nil) return NULL;
+    NSData *rData = (NSData *)sig[@"r"];
+    NSData *sData = (NSData *)sig[@"s"];
+    
+    NSDictionary *signatureDictionary = @{ @"v" : @([sig[@"recoveryParam"] intValue]),
+                                           @"r" : [rData base64EncodedStringWithOptions:0],
+                                           @"s" : [sData base64EncodedStringWithOptions:0] };
+    return signatureDictionary;
+}
+
 NSDictionary *genericSignature(BTCKey *keypair, NSData *hash, BOOL lowS) {
     BTCBigNumber* privkeyBN = [[BTCBigNumber alloc] initWithUnsignedBigEndian:[keypair privateKey]];
     BTCBigNumber* n = [BTCCurvePoint curveOrder];

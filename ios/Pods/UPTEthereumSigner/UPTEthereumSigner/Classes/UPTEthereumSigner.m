@@ -81,16 +81,16 @@ NSString *const UPTSignerErrorCodeLevelSigningError = @"-14";
         NSError *protectionLevelError = [[NSError alloc] initWithDomain:@"UPTError" 
                                                                    code:UPTSignerErrorCodeLevelParamNotRecognized.integerValue 
                                                                userInfo:@{ @"message" : @"protection level not found for eth address" }];
-        result( nil, protectionLevelError);
+        result(nil, protectionLevelError);
         return;
     }
 
     BTCKey *key = [self keyPairWithEthAddress:ethAddress userPromptText:userPromptText protectionLevel:protectionLevel];
     if (key) {
         NSData *hash = [payload SHA256];
-        NSData *signature = simpleSignature(key, hash);
+        NSDictionary *signature = jwtSignature(key, hash);
         if (signature) {
-            result(signature, nil);
+            result(@{ @"r" : signature[@"r"], @"s" : signature[@"s"], @"v" : @([signature[@"v"] intValue]) }, nil);
         } else {
             NSError *signingError = [[NSError alloc] initWithDomain:@"UPTError"
                                                                code:UPTSignerErrorCodeLevelSigningError.integerValue
@@ -98,8 +98,10 @@ NSString *const UPTSignerErrorCodeLevelSigningError = @"-14";
             result(nil, signingError);
         }
     } else {
-        NSError *protectionLevelError = [[NSError alloc] initWithDomain:@"UPTError" code:UPTSignerErrorCodeLevelPrivateKeyNotFound.integerValue userInfo:@{@"message": @"private key not found for eth address"}];
-        result( nil, protectionLevelError);
+        NSError *protectionLevelError = [[NSError alloc] initWithDomain:@"UPTError" 
+                                                                   code:UPTSignerErrorCodeLevelPrivateKeyNotFound.integerValue
+                                                               userInfo:@{ @"message": @"private key not found for eth address" }];
+        result(nil, protectionLevelError);
     }
 }
 
@@ -120,6 +122,22 @@ NSString *const UPTSignerErrorCodeLevelSigningError = @"-14";
     [UPTEthereumSigner saveEthAddress:ethAddress];
     NSString *publicKeyString = [keyPair.publicKey base64EncodedStringWithOptions:0];
     result( ethAddress, publicKeyString, nil );
+}
+
++ (void)deleteKey:(NSString *)ethAddress result:(UPTEthSignerDeleteKeyResult)result {
+    UPTEthKeychainProtectionLevel protectionLevel = [UPTEthereumSigner protectionLevelWithEthAddress:ethAddress];
+    if (protectionLevel != UPTEthKeychainProtectionLevelNotRecognized) {
+        VALValet *privateKeystore = [UPTEthereumSigner privateKeystoreWithProtectionLevel:protectionLevel];
+        [privateKeystore removeObjectForKey:ethAddress];
+    }
+    
+    VALValet *protectionLevelsKeystore = [UPTEthereumSigner keystoreForProtectionLevels];
+    [protectionLevelsKeystore removeObjectForKey:ethAddress];
+    
+    VALValet *addressKeystore = [UPTEthereumSigner ethAddressesKeystore];
+    [addressKeystore removeObjectForKey:ethAddress];
+    
+    result(YES, nil);
 }
 
 #pragma mark - Private

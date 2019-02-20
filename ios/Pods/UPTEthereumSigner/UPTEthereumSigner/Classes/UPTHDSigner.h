@@ -20,10 +20,12 @@ typedef void (^UPTHDSignerSeedCreationResult)(NSString *ethAddress, NSString *pu
 typedef void (^UPTHDSignerSeedPhraseResult)(NSString *phrase, NSError *error);
 
 typedef void (^UPTHDSignerTransactionSigningResult)(NSDictionary *signature, NSError *error);
-typedef void (^UPTHDSignerJWTSigningResult)(NSString *signature, NSError *error);
+typedef void (^UPTHDSignerJWTSigningResult)(NSDictionary *signature, NSError *error);
 
 /// param privateKey is a base64 string
 typedef void (^UPTHDSignerPrivateKeyResult)(NSString *privateKeyBase64, NSError *error);
+
+typedef void (^UPTEthSignerDeleteSeedResult)(BOOL deleted, NSError *error);
 
 FOUNDATION_EXPORT NSString * const UPTHDSignerErrorCodeLevelParamNotRecognized;
 FOUNDATION_EXPORT NSString * const UPTHDSignerErrorCodeLevelPrivateKeyNotFound;
@@ -65,6 +67,7 @@ FOUNDATION_EXPORT NSString * const METAMASK_ROOT_DERIVATION_PATH;
 
 /// @param rootAddress  a root account Ethereum address
 + (void)privateKeyForPath:(NSString *)rootAddress derivationPath:(NSString *)derivationPath prompt:(NSString *)prompt callback:(UPTHDSignerPrivateKeyResult)callback;
++ (void)deleteSeed:(NSString *)phrase callback:(UPTEthSignerDeleteSeedResult)callback;
 
 // utils
 + (NSArray<NSString *> *)wordsFromPhrase:(NSString *)phrase;
