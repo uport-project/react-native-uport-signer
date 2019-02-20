@@ -13,6 +13,7 @@
 		C8796B0721FFB546004EB8E1 /* libUPTEthereumSigner.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8796B0621FFB546004EB8E1 /* libUPTEthereumSigner.a */; };
 		C8796B0921FFB54A004EB8E1 /* libValet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8796B0821FFB54A004EB8E1 /* libValet.a */; };
 		C8796B0B21FFB54C004EB8E1 /* libISO8601DateFormatter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8796B0A21FFB54C004EB8E1 /* libISO8601DateFormatter.a */; };
+		C8936FD4221A96CF004EE464 /* RNUportHDSigner.m in Sources */ = {isa = PBXBuildFile; fileRef = C8936FD3221A96CF004EE464 /* RNUportHDSigner.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,6 +162,8 @@
 		C8796B0621FFB546004EB8E1 /* libUPTEthereumSigner.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libUPTEthereumSigner.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8796B0821FFB54A004EB8E1 /* libValet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libValet.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8796B0A21FFB54C004EB8E1 /* libISO8601DateFormatter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libISO8601DateFormatter.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8936FD3221A96CF004EE464 /* RNUportHDSigner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNUportHDSigner.m; sourceTree = "<group>"; };
+		C8936FD5221A96E6004EE464 /* RNUportHDSigner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNUportHDSigner.h; sourceTree = "<group>"; };
 		C8BD4E4121E8024400734B19 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -203,6 +206,8 @@
 				C8BD4E4021E8022800734B19 /* Libraries */,
 				B3E7B5881CC2AC0600A0062D /* RNUportSigner.h */,
 				B3E7B5891CC2AC0600A0062D /* RNUportSigner.m */,
+				C8936FD5221A96E6004EE464 /* RNUportHDSigner.h */,
+				C8936FD3221A96CF004EE464 /* RNUportHDSigner.m */,
 				134814211AA4EA7D00B7C361 /* Products */,
 				1C07DC4DB0315296CCA2703C /* Pods */,
 				7B7F5A76F879F1F8BAAE5568 /* Frameworks */,
@@ -267,6 +272,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 58B511EF1A9E6C8500147676 /* Build configuration list for PBXNativeTarget "RNUportSigner" */;
 			buildPhases = (
+				B16E63EEDAA094903F7DB36D /* [CP] Check Pods Manifest.lock */,
 				58B511D71A9E6C8500147676 /* Sources */,
 				58B511D81A9E6C8500147676 /* Frameworks */,
 				58B511D91A9E6C8500147676 /* CopyFiles */,
@@ -432,11 +438,37 @@
 		};
 /* End PBXReferenceProxy section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B16E63EEDAA094903F7DB36D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RNUportSigner-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		58B511D71A9E6C8500147676 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8936FD4221A96CF004EE464 /* RNUportHDSigner.m in Sources */,
 				B3E7B58A1CC2AC0600A0062D /* RNUportSigner.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
