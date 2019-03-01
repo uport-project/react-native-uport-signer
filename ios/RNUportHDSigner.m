@@ -34,9 +34,9 @@ RCT_EXPORT_METHOD(hasSeed:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRe
     resolve(@([UPTHDSigner hasSeed]));
 }
 
-//RCT_EXPORT_METHOD(listSeedAddresses:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) {
-//    resolve([UPTHDSigner listSeedAddresses]);
-//}
+RCT_EXPORT_METHOD(listSeedAddresses:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) {
+    resolve([UPTHDSigner listSeedAddresses]);
+}
 
 RCT_EXPORT_METHOD(createSeed:(NSString *)protectionLevel resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) {
     UPTHDSignerProtectionLevel enumStorageLevel = [UPTHDSigner enumStorageLevelWithStorageLevel:protectionLevel];
