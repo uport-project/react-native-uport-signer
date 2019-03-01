@@ -38,6 +38,7 @@ FOUNDATION_EXPORT NSString * const METAMASK_ROOT_DERIVATION_PATH;
 @interface UPTHDSigner : NSObject
 
 + (BOOL)hasSeed;
++ (NSArray *)listSeedAddresses;
 
 /// @param  callback contains phrase
 + (void)showSeed:(NSString *)rootAddress prompt:(NSString *)prompt callback:(UPTHDSignerSeedPhraseResult)callback;
