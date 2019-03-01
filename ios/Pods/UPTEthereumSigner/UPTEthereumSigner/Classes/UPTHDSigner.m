@@ -49,6 +49,11 @@ NSString * const UPTHDSignerErrorCodeLevelSigningError = @"-14";
     return hasSeed;
 }
 
++ (NSArray *)listSeedAddresses {
+  VALValet *addressKeystore = [UPTHDSigner ethAddressesKeystore];
+  return [[addressKeystore allKeys] allObjects];
+}
+
 + (void)showSeed:(NSString *)rootAddress prompt:(NSString *)prompt callback:(UPTHDSignerSeedPhraseResult)callback {
     UPTHDSignerProtectionLevel protectionLevel = [UPTHDSigner protectionLevelWithEthAddress:rootAddress];
     if ( protectionLevel == UPTHDSignerProtectionLevelNotRecognized ) {
