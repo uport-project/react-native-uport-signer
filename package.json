@@ -14,5 +14,8 @@
   "peerDependencies": {
     "react": ">= 16.5.0",
     "react-native": ">= 0.57.0 < 1"
+  },
+  "devDependencies": {
+    "react-native": ">= 0.57.0 < 1"
   }
 }

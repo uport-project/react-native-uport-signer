@@ -18,6 +18,10 @@ import com.uport.sdk.signer.UportSigner.Companion.asSeedLabel
 import com.uport.sdk.signer.encryption.KeyProtection.Level
 import com.uport.sdk.signer.keyToBase64
 
+/**
+ * This module deals with creating, importing, and using private keys.
+ * It also provides methods to check for the security settings of the device
+ */
 open class RNUportSignerModule(reactContext: ReactApplicationContext)
     : ReactContextBaseJavaModule(reactContext) {
 

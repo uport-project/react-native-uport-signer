@@ -20,7 +20,9 @@ import java.util.*
 
 
 /**
- * wrapper for the UportSigner functionality
+ * wrapper for the UportHDSigner functionality.
+ * This provides methods for creating and importing seeds, and using private keys derived
+ * using a Hierarchically Deterministic algorithm (BIP32) starting from those seeds
  */
 class RNUportHDSignerModule(reactContext: ReactApplicationContext)
     : RNUportSignerModule(reactContext) {
