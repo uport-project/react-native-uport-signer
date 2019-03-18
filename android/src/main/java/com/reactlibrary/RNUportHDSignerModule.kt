@@ -22,7 +22,7 @@ import java.util.*
 /**
  * wrapper for the UportSigner functionality
  */
-class RNUportHDSignerModule(reactContext: ReactApplicationContext?)
+class RNUportHDSignerModule(reactContext: ReactApplicationContext)
     : RNUportSignerModule(reactContext) {
 
     override fun getName(): String = "RNUportHDSignerModule"

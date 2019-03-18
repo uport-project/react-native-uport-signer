@@ -18,7 +18,7 @@ import com.uport.sdk.signer.UportSigner.Companion.asSeedLabel
 import com.uport.sdk.signer.encryption.KeyProtection.Level
 import com.uport.sdk.signer.keyToBase64
 
-open class RNUportSignerModule(reactContext: ReactApplicationContext?)
+open class RNUportSignerModule(reactContext: ReactApplicationContext)
     : ReactContextBaseJavaModule(reactContext) {
 
     override fun getName(): String = "RNUportSignerModule"
