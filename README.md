@@ -7,7 +7,18 @@
 
 ### Mostly automatic installation
 
-`$ react-native link react-native-uport-signer`
+1. `$ react-native link react-native-uport-signer`
+2. Insert the following line inside the `allprojects.repositories` block in `android/build.gradle`:
+   
+```groovy
+allprojects {
+  repositories {
+      //...
+      //add this line
+      maven { url 'https://jitpack.io' }
+  }
+}
+```
 
 ### Manual installation
 
@@ -21,26 +32,35 @@
 
 #### Android
 
-1. Open up `android/app/src/main/java/[...]/MainActivity.java`
+1. Insert the following line inside the `allprojects.repositories` block in `android/build.gradle`:
+
+```groovy
+allprojects {
+   repositories {
+       //...
+       //add this line
+       maven { url 'https://jitpack.io' }
+   }
+}
+```
+2. Insert the following lines inside the `dependencies` block in `android/app/build.gradle`:
+```groovy
+dependencies {
+    // add this line
+    implementation project(':react-native-uport-signer')
+    //...
+}
+```
+
+3. Append the following lines to `android/settings.gradle`:
+```groovy
+include ':react-native-uport-signer'
+project(':react-native-uport-signer').projectDir = new File(rootProject.projectDir, 	'../node_modules/react-native-uport-signer/android')
+```
+
+4. Open up `android/app/src/main/java/[...]/MainActivity.java`
   - Add `import com.reactlibrary.RNUportSignerPackage;` to the imports at the top of the file
   - Add `new RNUportSignerPackage()` to the list returned by the `getPackages()` method
-2. Append the following lines to `android/settings.gradle`:
-  	```
-  	include ':react-native-uport-signer'
-  	project(':react-native-uport-signer').projectDir = new File(rootProject.projectDir, 	'../node_modules/react-native-uport-signer/android')
-  	```
-3. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
-  	```
-      compile project(':react-native-uport-signer')
-  	```
-
-#### Windows
-[Read it! :D](https://github.com/ReactWindows/react-native)
-
-1. In Visual Studio add the `RNUportSigner.sln` in `node_modules/react-native-uport-signer/windows/RNUportSigner.sln` folder to their solution, reference from their app.
-2. Open up your `MainPage.cs` app
-  - Add `using Uport.Signer.RNUportSigner;` to the usings at the top of the file
-  - Add `new RNUportSignerPackage()` to the `List<IReactPackage>` returned by the `Packages` method
 
 
 ## Usage
