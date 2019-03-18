@@ -1,4 +1,4 @@
-@file:Suppress("unused", "KDocUnresolvedReference")
+@file:Suppress("unused", "KDocUnresolvedReference", "TooManyFunctions")
 
 package com.reactlibrary
 
