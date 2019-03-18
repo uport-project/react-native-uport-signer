@@ -9,7 +9,6 @@
 
 1. `$ react-native link react-native-uport-signer`
 2. Insert the following line inside the `allprojects.repositories` block in `android/build.gradle`:
-   
 ```groovy
 allprojects {
   repositories {
@@ -61,6 +60,10 @@ project(':react-native-uport-signer').projectDir = new File(rootProject.projectD
 4. Open up `android/app/src/main/java/[...]/MainActivity.java`
   - Add `import com.reactlibrary.RNUportSignerPackage;` to the imports at the top of the file
   - Add `new RNUportSignerPackage()` to the list returned by the `getPackages()` method
+  
+5. [optional] If not already done, update the `minSdkVersion` of your `app` to 21
+  This is usually in `android/app/build.gradle` but can also be defined in `android/build.gradle`
+depending on when your project was created
 
 
 ## Usage
