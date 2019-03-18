@@ -1,3 +1,5 @@
+@file:Suppress("unused", "KDocUnresolvedReference")
+
 package com.reactlibrary
 
 import android.text.TextUtils
@@ -10,9 +12,11 @@ import com.uport.sdk.signer.UportSigner
 import com.uport.sdk.signer.UportSigner.Companion.ERR_BLANK_KEY
 import com.uport.sdk.signer.encryption.KeyProtection.Level
 import com.uport.sdk.signer.keyToBase64
-import org.kethereum.bip32.generateKey
-import org.kethereum.bip39.Mnemonic
-import java.util.HashMap
+import org.kethereum.bip39.entropyToMnemonic
+import org.kethereum.bip39.model.MnemonicWords
+import org.kethereum.bip39.toKey
+import org.kethereum.bip39.wordlists.WORDLIST_ENGLISH
+import java.util.*
 
 
 /**
@@ -55,17 +59,16 @@ class RNUportHDSignerModule(reactContext: ReactApplicationContext?)
 
         UportHDSigner().createHDSeed(
                 reactApplicationContext,
-                keyLevel,
-                { err, address, pubKey ->
-                    if (err != null) {
-                        return@createHDSeed promise.reject(err)
-                    }
-                    val map = WritableNativeMap()
-                    map.putString("address", address)
-                    map.putString("pubKey", pubKey)
-                    return@createHDSeed promise.resolve(map)
-                }
-        )
+                keyLevel
+        ) { err, address, pubKey ->
+            if (err != null) {
+                return@createHDSeed promise.reject(err)
+            }
+            val map = WritableNativeMap()
+            map.putString("address", address)
+            map.putString("pubKey", pubKey)
+            return@createHDSeed promise.resolve(map)
+        }
     }
 
     @ReactMethod
@@ -104,17 +107,16 @@ class RNUportHDSignerModule(reactContext: ReactApplicationContext?)
                 reactApplicationContext,
                 rootAddr,
                 hdPath,
-                prompt ?: "",
-                { err, address, pubKey ->
-                    if (err != null) {
-                        return@computeAddressForPath promise.reject(err)
-                    }
-                    val map = WritableNativeMap()
-                    map.putString("address", address)
-                    map.putString("pubKey", pubKey)
-                    return@computeAddressForPath promise.resolve(map)
-                }
-        )
+                prompt ?: ""
+        ) { err, address, pubKey ->
+            if (err != null) {
+                return@computeAddressForPath promise.reject(err)
+            }
+            val map = WritableNativeMap()
+            map.putString("address", address)
+            map.putString("pubKey", pubKey)
+            return@computeAddressForPath promise.resolve(map)
+        }
     }
 
     /**
@@ -138,15 +140,14 @@ class RNUportHDSignerModule(reactContext: ReactApplicationContext?)
         UportHDSigner().showHDSeed(
                 reactApplicationContext,
                 rootAddr,
-                prompt ?: "",
-                { err, phrase ->
-                    return@showHDSeed if (err != null) {
-                        promise.reject(err)
-                    } else {
-                        promise.resolve(phrase)
-                    }
-                }
-        )
+                prompt ?: ""
+        ) { err, phrase ->
+            return@showHDSeed if (err != null) {
+                promise.reject(err)
+            } else {
+                promise.resolve(phrase)
+            }
+        }
     }
 
     /**
@@ -175,18 +176,17 @@ class RNUportHDSignerModule(reactContext: ReactApplicationContext?)
         UportHDSigner().importHDSeed(
                 reactApplicationContext,
                 keyLevel,
-                seed,
-                { err, address, pubKey ->
-                    if (err != null) {
-                        return@importHDSeed promise.reject(err)
-                    }
+                seed
+        ) { err, address, pubKey ->
+            if (err != null) {
+                return@importHDSeed promise.reject(err)
+            }
 
-                    val map = WritableNativeMap()
-                    map.putString("address", address)
-                    map.putString("pubKey", pubKey)
-                    return@importHDSeed promise.resolve(map)
-                }
-        )
+            val map = WritableNativeMap()
+            map.putString("address", address)
+            map.putString("pubKey", pubKey)
+            return@importHDSeed promise.resolve(map)
+        }
     }
 
     /**
@@ -223,18 +223,17 @@ class RNUportHDSignerModule(reactContext: ReactApplicationContext?)
                 rootAddr,
                 hdPath,
                 payload,
-                prompt ?: "",
-                { err, sigData ->
-                    if (err != null) {
-                        return@signTransaction promise.reject(err)
-                    }
-                    val map = WritableNativeMap()
-                    map.putInt("v", sigData.v.toInt())
-                    map.putString("r", sigData.r.keyToBase64())
-                    map.putString("s", sigData.s.keyToBase64())
-                    return@signTransaction promise.resolve(map)
-                }
-        )
+                prompt ?: ""
+        ) { err, sigData ->
+            if (err != null) {
+                return@signTransaction promise.reject(err)
+            }
+            val map = WritableNativeMap()
+            map.putInt("v", sigData.v.toInt())
+            map.putString("r", sigData.r.keyToBase64())
+            map.putString("s", sigData.s.keyToBase64())
+            return@signTransaction promise.resolve(map)
+        }
     }
 
     /**
@@ -271,19 +270,18 @@ class RNUportHDSignerModule(reactContext: ReactApplicationContext?)
                 rootAddr,
                 hdPath,
                 payload,
-                prompt ?: "",
-                { err, sigData ->
-                    if (err != null) {
-                        return@signJwtBundle promise.reject(err)
-                    }
-                    val map = WritableNativeMap()
-                    map.putInt("v", sigData.v.toInt())
-                    map.putString("r", sigData.r.keyToBase64())
-                    map.putString("s", sigData.s.keyToBase64())
-                    return@signJwtBundle promise.resolve(map)
+                prompt ?: ""
+        ) { err, sigData ->
+            if (err != null) {
+                return@signJwtBundle promise.reject(err)
+            }
+            val map = WritableNativeMap()
+            map.putInt("v", sigData.v.toInt())
+            map.putString("r", sigData.r.keyToBase64())
+            map.putString("s", sigData.s.keyToBase64())
+            return@signJwtBundle promise.resolve(map)
 
-                }
-        )
+        }
     }
 
     /**
@@ -314,31 +312,30 @@ class RNUportHDSignerModule(reactContext: ReactApplicationContext?)
             return promise.reject(storageError)
         }
 
-        encryptionLayer.decrypt(activity, prompt ?: "", encryptedEntropy, { err, entropyBuff ->
+        encryptionLayer.decrypt(activity, prompt ?: "", encryptedEntropy) { err, entropyBuff ->
             if (err != null) {
                 return@decrypt promise.reject(err)
             }
 
             try {
-                val phrase = Mnemonic.entropyToMnemonic(entropyBuff)
-                val seed = Mnemonic.mnemonicToSeed(phrase)
-                val extendedKey = generateKey(seed, hdPath)
+                val phrase = entropyToMnemonic(entropyBuff, WORDLIST_ENGLISH)
+                val extendedKey = MnemonicWords(phrase).toKey(hdPath)
 
                 val keyPair = extendedKey.keyPair
 
-                val encodedKey = keyPair.privateKey.keyToBase64()
+                val encodedKey = keyPair.privateKey.key.keyToBase64()
                 return@decrypt promise.resolve(encodedKey)
             } catch (exception: Exception) {
                 return@decrypt promise.reject(exception)
             }
-        })
+        }
     }
 
     /**
      * Verifies if the provided mnemonic phrase is usable for generating keys from a seed phrase
      */
     @ReactMethod
-    fun validateMnemonic(phrase : String?, promise: Promise?) {
+    fun validateMnemonic(phrase: String?, promise: Promise?) {
         promise!!
 
         promise.resolve(UportHDSigner().validateMnemonic(phrase ?: ""))

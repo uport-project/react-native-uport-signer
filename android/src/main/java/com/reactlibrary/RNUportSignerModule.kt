@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package com.reactlibrary
 
 import android.content.Context
@@ -23,17 +25,17 @@ open class RNUportSignerModule(reactContext: ReactApplicationContext?)
 
     @ReactMethod
     fun hasSecureKeyguard(promise: Promise) {
-        UportSigner().hasSecuredKeyguard(reactApplicationContext, { promise.resolve(it) })
+        UportSigner().hasSecuredKeyguard(reactApplicationContext) { promise.resolve(it) }
     }
 
     @ReactMethod
     fun hasFingerprintHardware(promise: Promise) {
-        UportSigner().hasFingerprintHardware(reactApplicationContext, { promise.resolve(it) })
+        UportSigner().hasFingerprintHardware(reactApplicationContext) { promise.resolve(it) }
     }
 
     @ReactMethod
     fun hasSetupFingerprints(promise: Promise) {
-        UportSigner().hasSetupFingerprints(reactApplicationContext, { promise.resolve(it) })
+        UportSigner().hasSetupFingerprints(reactApplicationContext) { promise.resolve(it) }
     }
 
     @ReactMethod
@@ -65,17 +67,16 @@ open class RNUportSignerModule(reactContext: ReactApplicationContext?)
 
         UportSigner().createKey(
                 reactApplicationContext,
-                keyLevel,
-                { err, address, pubKey ->
-                    if (err != null) {
-                        return@createKey promise.reject(err)
-                    }
-                    val map = WritableNativeMap()
-                    map.putString("address", address)
-                    map.putString("pubKey", pubKey)
-                    return@createKey promise.resolve(map)
-                }
-        )
+                keyLevel
+        ) { err, address, pubKey ->
+            if (err != null) {
+                return@createKey promise.reject(err)
+            }
+            val map = WritableNativeMap()
+            map.putString("address", address)
+            map.putString("pubKey", pubKey)
+            return@createKey promise.resolve(map)
+        }
     }
 
     @ReactMethod
@@ -103,17 +104,16 @@ open class RNUportSignerModule(reactContext: ReactApplicationContext?)
         UportSigner().saveKey(
                 reactApplicationContext,
                 keyLevel,
-                privKeyBytes,
-                { err, address, pubKey ->
-                    if (err != null) {
-                        return@saveKey promise.reject(err)
-                    }
-                    val map = WritableNativeMap()
-                    map.putString("address", address)
-                    map.putString("pubKey", pubKey)
-                    return@saveKey promise.resolve(map)
-                }
-        )
+                privKeyBytes
+        ) { err, address, pubKey ->
+            if (err != null) {
+                return@saveKey promise.reject(err)
+            }
+            val map = WritableNativeMap()
+            map.putString("address", address)
+            map.putString("pubKey", pubKey)
+            return@saveKey promise.resolve(map)
+        }
     }
 
     @ReactMethod
@@ -138,18 +138,17 @@ open class RNUportSignerModule(reactContext: ReactApplicationContext?)
                 activity,
                 addr,
                 payload,
-                prompt ?: "",
-                { err, sigData ->
-                    if (err != null) {
-                        return@signTransaction promise.reject(err)
-                    }
-                    val map = WritableNativeMap()
-                    map.putInt("v", sigData.v.toInt())
-                    map.putString("r", sigData.r.keyToBase64())
-                    map.putString("s", sigData.s.keyToBase64())
-                    return@signTransaction promise.resolve(map)
-                }
-        )
+                prompt ?: ""
+        ) { err, sigData ->
+            if (err != null) {
+                return@signTransaction promise.reject(err)
+            }
+            val map = WritableNativeMap()
+            map.putInt("v", sigData.v.toInt())
+            map.putString("r", sigData.r.keyToBase64())
+            map.putString("s", sigData.s.keyToBase64())
+            return@signTransaction promise.resolve(map)
+        }
     }
 
     @ReactMethod
@@ -166,18 +165,17 @@ open class RNUportSignerModule(reactContext: ReactApplicationContext?)
                 activity,
                 addr,
                 bundle,
-                prompt ?: "",
-                { err, sigData ->
-                    if (err != null) {
-                        return@signJwtBundle promise.reject(err)
-                    }
-                    val map = WritableNativeMap()
-                    map.putInt("v", sigData.v.toInt())
-                    map.putString("r", sigData.r.keyToBase64())
-                    map.putString("s", sigData.s.keyToBase64())
-                    return@signJwtBundle promise.resolve(map)
-                }
-        )
+                prompt ?: ""
+        ) { err, sigData ->
+            if (err != null) {
+                return@signJwtBundle promise.reject(err)
+            }
+            val map = WritableNativeMap()
+            map.putInt("v", sigData.v.toInt())
+            map.putString("r", sigData.r.keyToBase64())
+            map.putString("s", sigData.s.keyToBase64())
+            return@signJwtBundle promise.resolve(map)
+        }
     }
 
     @ReactMethod
@@ -186,13 +184,12 @@ open class RNUportSignerModule(reactContext: ReactApplicationContext?)
         promise!!
 
         UportSigner().allAddresses(
-                reactApplicationContext,
-                { addresses ->
-                    val ret = WritableNativeArray()
-                    addresses.forEach { ret.pushString(it) }
-                    promise.resolve(ret)
-                }
-        )
+                reactApplicationContext
+        ) { addresses ->
+            val ret = WritableNativeArray()
+            addresses.forEach { ret.pushString(it) }
+            promise.resolve(ret)
+        }
     }
 
     @ReactMethod
@@ -209,14 +206,13 @@ open class RNUportSignerModule(reactContext: ReactApplicationContext?)
                 reactApplicationContext,
                 keyLevel,
                 asGenericLabel(pubKey),
-                privKey.toByteArray(Charsets.UTF_8),
-                { err, result ->
-                    if (err != null) {
-                        return@storeEncryptedPayload promise.reject(err)
-                    }
-                    return@storeEncryptedPayload promise.resolve(result)
-                }
-        )
+                privKey.toByteArray(Charsets.UTF_8)
+        ) { err, result ->
+            if (err != null) {
+                return@storeEncryptedPayload promise.reject(err)
+            }
+            return@storeEncryptedPayload promise.resolve(result)
+        }
     }
 
 
@@ -234,14 +230,13 @@ open class RNUportSignerModule(reactContext: ReactApplicationContext?)
         UportSigner().loadEncryptedPayload(
                 activity,
                 asGenericLabel(publicKey!!),
-                "",
-                { err, decrypted ->
-                    if (err != null) {
-                        return@loadEncryptedPayload promise.reject(err)
-                    }
-                    return@loadEncryptedPayload promise.resolve(String(decrypted))
-                }
-        )
+                ""
+        ) { err, decrypted ->
+            if (err != null) {
+                return@loadEncryptedPayload promise.reject(err)
+            }
+            return@loadEncryptedPayload promise.resolve(String(decrypted))
+        }
     }
 
     @ReactMethod
@@ -263,15 +258,14 @@ open class RNUportSignerModule(reactContext: ReactApplicationContext?)
                 reactApplicationContext,
                 keyLevel,
                 asSeedLabel(address),
-                seed.toByteArray(),
-                { err, result ->
-                    if (err != null) {
-                        return@storeEncryptedPayload promise.reject(err)
-                    }
-                    return@storeEncryptedPayload promise.resolve(result)
+                seed.toByteArray()
+        ) { err, result ->
+            if (err != null) {
+                return@storeEncryptedPayload promise.reject(err)
+            }
+            return@storeEncryptedPayload promise.resolve(result)
 
-                }
-        )
+        }
     }
 
     @ReactMethod
@@ -290,14 +284,13 @@ open class RNUportSignerModule(reactContext: ReactApplicationContext?)
         UportSigner().loadEncryptedPayload(
                 activity,
                 asSeedLabel(address),
-                "",
-                { err, decrypted ->
-                    if (err != null) {
-                        return@loadEncryptedPayload promise.reject(err)
-                    }
-                    return@loadEncryptedPayload promise.resolve(String(decrypted))
-                }
-        )
+                ""
+        ) { err, decrypted ->
+            if (err != null) {
+                return@loadEncryptedPayload promise.reject(err)
+            }
+            return@loadEncryptedPayload promise.resolve(String(decrypted))
+        }
     }
 
     internal fun keyLevelFromString(level: String): Level = when (level) {
