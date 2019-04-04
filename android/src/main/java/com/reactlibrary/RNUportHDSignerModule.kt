@@ -348,7 +348,7 @@ class RNUportHDSignerModule(reactContext: ReactApplicationContext)
      * Returns a list of addresses representing the uport roots used as handles for seeds
      */
     @ReactMethod
-    fun allHDRoots(promise: Promise?) {
+    fun listSeedAddresses(promise: Promise?) {
         promise!!
 
         val addresses = UportHDSigner().allHDRoots(reactApplicationContext) 
