@@ -7,6 +7,7 @@ import com.facebook.react.bridge.Promise
 import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.bridge.ReactMethod
 import com.facebook.react.bridge.WritableNativeMap
+import com.facebook.react.bridge.WritableNativeArray
 import com.uport.sdk.signer.UportHDSigner
 import com.uport.sdk.signer.UportSigner
 import com.uport.sdk.signer.UportSigner.Companion.ERR_BLANK_KEY
@@ -341,6 +342,19 @@ class RNUportHDSignerModule(reactContext: ReactApplicationContext)
         promise!!
 
         promise.resolve(UportHDSigner().validateMnemonic(phrase ?: ""))
+    }
+
+    /**
+     * Returns a list of addresses representing the uport roots used as handles for seeds
+     */
+    @ReactMethod
+    fun listSeedAddresses(promise: Promise?) {
+        promise!!
+
+        val addresses = UportHDSigner().allHDRoots(reactApplicationContext) 
+        val ret = WritableNativeArray()
+        addresses.forEach { ret.pushString(it) }
+        promise.resolve(ret)
     }
 
 }
