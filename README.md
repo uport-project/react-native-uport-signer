@@ -79,12 +79,12 @@ RNUportHDSigner.createSeed('simple').then( seed => {
 })
 
 // Get the seed phrase
-RNUportHDSigner.showSeed(this.state.address, 'simple').then (seed => {
+RNUportHDSigner.showSeed(address, 'simple').then (seed => {
 	console.log(seed)
 })
 
 // Delete seed
-RNUportHDSigner.deleteSeed(this.props.address)
+RNUportHDSigner.deleteSeed(address)
 
 // Import Seed
 RNUportHDSigner.importSeed(seedPhrase, 'simple').then(addressObj => {
@@ -93,7 +93,7 @@ RNUportHDSigner.importSeed(seedPhrase, 'simple').then(addressObj => {
 })
 
 //Derive another Address
-RNUportHDSigner.addressForPath(this.state.address, `m/7696500'/0'/1'/0'`,'prompt').then (seed => {
+RNUportHDSigner.addressForPath(address, `m/7696500'/0'/1'/0'`,'prompt').then (seed => {
 	console.log(seed)
 })
 
@@ -109,18 +109,20 @@ RNUportHDSigner.signJwt(address,
 		})
 		
 // Signing an Eth Tx
-RNUportHDSigner.signTx(this.props.address,
+RNUportHDSigner.signTx(address,
         RNUportHDSigner.UPORT_ROOT_DERIVATION_PATH,
         base64Tx,
         'simple'
-    ).then( sig => {
-			console.log(sig.r)
-			console.log(sig.s)
-			console.log(sig.v)
+    ).then( txSig => {
+			console.log(txSig.r)
+			console.log(txSig.s)
+			console.log(txSig.v)
     })
 ```
 
-## Basic Signer Usage
+## Basic Signer Usage (DEPRECATED)
+Usage of the basic signer is discouraged because recovery is not possible.
+
 ```javascript
 import { RNUportSigner } from 'react-native-uport-signer';
 
@@ -131,9 +133,9 @@ RNUportSigner.createKeyPair('simple').then(keypair => {
 })
 
 //Sign a JWT
-const exampleJwtPayload = { iss: this.props.address, aud: this.props.address, name: 'test'}
+const exampleJwtPayload = { iss: address, aud: address, name: 'test'}
 
-RNUportSigner.signJwt(this.props.address,
+RNUportSigner.signJwt(address,
 		exampleJwtPayload.toString('base64'), 
 		'simple'
 ).then( jwtSig => {
@@ -143,13 +145,13 @@ RNUportSigner.signJwt(this.props.address,
 })
 
 //Sign an Eth tx
-RNUportSigner.signTx(this.props.address,
+RNUportSigner.signTx(address,
         rlpEncodedTx, //RLP Encoded eth transaction
         'simple'
 ).then( txSig => {
-	console.log(sig.r)
-	console.log(sig.s)
-	console.log(sig.v)
+	console.log(txSig.r)
+	console.log(txSig.s)
+	console.log(txSig.v)
 })
 		
 ```
