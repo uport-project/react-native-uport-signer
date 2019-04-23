@@ -7,7 +7,7 @@ buildscript {
 
     dependencies {
         classpath 'com.android.tools.build:gradle:3.3.2'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.21"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.30"
     }
 }
 
@@ -42,6 +42,6 @@ repositories {
 dependencies {
     implementation 'com.facebook.react:react-native:+'
 
-    api "com.github.uport-project.uport-android-sdk:signer:v0.4.1"
+    api "com.github.uport-project.uport-android-sdk:signer:v0.4.2"
 }
   
