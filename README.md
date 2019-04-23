@@ -73,4 +73,9 @@ import RNUportSigner from 'react-native-uport-signer';
 // TODO: What to do with the module?
 RNUportSigner;
 ```
-  
+
+## Changelog
+
+* v1.2.0
+    - android build based on kotlin 1.3.30
+    - expose `listSeedAddresses` method on android
