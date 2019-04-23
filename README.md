@@ -76,6 +76,6 @@ RNUportSigner;
 
 ## Changelog
 
-* v1.2.0
+* v1.2.1
     - android build based on kotlin 1.3.30
     - expose `listSeedAddresses` method on android
