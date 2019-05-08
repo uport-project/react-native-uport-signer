@@ -30,6 +30,11 @@
     return @{ @"UPORT_ROOT_DERIVATION_PATH": UPORT_ROOT_DERIVATION_PATH };
 }
 
++ (BOOL)requiresMainQueueSetup
+{
+    return NO;
+}
+
 RCT_EXPORT_METHOD(hasSeed:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) {
     resolve(@([UPTHDSigner hasSeed]));
 }
