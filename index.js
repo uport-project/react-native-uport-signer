@@ -11,7 +11,7 @@ function getSignerForAddress(address, derivationPath = DerivationPathRoot, userP
     const { v, r, s } = await RNUportHDSigner.signJwt(address,
       derivationPath,
       Buffer.from(data).toString('base64'),
-      'Sign a JWT');
+      userPrompt);
     
     return {
       recoveryParam: ((v == 0 || v == 1) ? v : v - 27),
