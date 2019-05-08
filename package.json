@@ -17,5 +17,8 @@
   },
   "devDependencies": {
     "react-native": ">= 0.57.0 < 1"
+  },
+  "dependencies": {
+    "buffer": "^5.2.1"
   }
 }
