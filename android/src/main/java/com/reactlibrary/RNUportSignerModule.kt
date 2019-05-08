@@ -29,17 +29,17 @@ open class RNUportSignerModule(reactContext: ReactApplicationContext)
 
     @ReactMethod
     fun hasSecureKeyguard(promise: Promise) {
-        UportSigner().hasSecuredKeyguard(reactApplicationContext) { promise.resolve(it) }
+        UportSigner().hasSecuredKeyguard(currentActivity ?: reactApplicationContext) { promise.resolve(it) }
     }
 
     @ReactMethod
     fun hasFingerprintHardware(promise: Promise) {
-        UportSigner().hasFingerprintHardware(reactApplicationContext) { promise.resolve(it) }
+        UportSigner().hasFingerprintHardware(currentActivity ?: reactApplicationContext) { promise.resolve(it) }
     }
 
     @ReactMethod
     fun hasSetupFingerprints(promise: Promise) {
-        UportSigner().hasSetupFingerprints(reactApplicationContext) { promise.resolve(it) }
+        UportSigner().hasSetupFingerprints(currentActivity ?: reactApplicationContext) { promise.resolve(it) }
     }
 
     @ReactMethod
@@ -70,7 +70,7 @@ open class RNUportSignerModule(reactContext: ReactApplicationContext)
         val keyLevel: Level = keyLevelFromString(level ?: "")
 
         UportSigner().createKey(
-                reactApplicationContext,
+                currentActivity ?: reactApplicationContext,
                 keyLevel
         ) { err, address, pubKey ->
             if (err != null) {
@@ -106,7 +106,7 @@ open class RNUportSignerModule(reactContext: ReactApplicationContext)
         }
 
         UportSigner().saveKey(
-                reactApplicationContext,
+                currentActivity ?: reactApplicationContext,
                 keyLevel,
                 privKeyBytes
         ) { err, address, pubKey ->
@@ -123,7 +123,7 @@ open class RNUportSignerModule(reactContext: ReactApplicationContext)
     @ReactMethod
     fun deleteKey(address: String) {
         UportSigner().deleteKey(
-                reactApplicationContext,
+                currentActivity ?: reactApplicationContext,
                 address
         )
     }
@@ -188,7 +188,7 @@ open class RNUportSignerModule(reactContext: ReactApplicationContext)
         promise!!
 
         UportSigner().allAddresses(
-                reactApplicationContext
+                currentActivity ?: reactApplicationContext
         ) { addresses ->
             val ret = WritableNativeArray()
             addresses.forEach { ret.pushString(it) }
@@ -207,7 +207,7 @@ open class RNUportSignerModule(reactContext: ReactApplicationContext)
         val privKey = privateKey ?: return promise.reject(IllegalArgumentException(ERR_BLANK_KEY))
 
         UportSigner().storeEncryptedPayload(
-                reactApplicationContext,
+                currentActivity ?: reactApplicationContext,
                 keyLevel,
                 asGenericLabel(pubKey),
                 privKey.toByteArray(Charsets.UTF_8)
@@ -259,7 +259,7 @@ open class RNUportSignerModule(reactContext: ReactApplicationContext)
         address!!
 
         UportSigner().storeEncryptedPayload(
-                reactApplicationContext,
+                currentActivity ?: reactApplicationContext,
                 keyLevel,
                 asSeedLabel(address),
                 seed.toByteArray()
