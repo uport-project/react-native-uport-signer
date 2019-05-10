@@ -41,7 +41,7 @@ class RNUportHDSignerModule(reactContext: ReactApplicationContext)
     fun hasSeed(promise: Promise?) {
         promise!!
 
-        promise.resolve(UportHDSigner().hasSeed(reactApplicationContext))
+        promise.resolve(UportHDSigner().hasSeed(currentActivity ?: reactApplicationContext))
     }
 
     /**
@@ -61,7 +61,7 @@ class RNUportHDSignerModule(reactContext: ReactApplicationContext)
         val keyLevel: Level = keyLevelFromString(level ?: "")
 
         UportHDSigner().createHDSeed(
-                reactApplicationContext,
+                currentActivity ?: reactApplicationContext,
                 keyLevel
         ) { err, address, pubKey ->
             if (err != null) {
@@ -77,7 +77,7 @@ class RNUportHDSignerModule(reactContext: ReactApplicationContext)
     @ReactMethod
     fun deleteSeed(label: String) {
         UportHDSigner().deleteSeed(
-                reactApplicationContext,
+                currentActivity ?: reactApplicationContext,
                 label
         )
     }
@@ -107,7 +107,7 @@ class RNUportHDSignerModule(reactContext: ReactApplicationContext)
                 ?: return promise.reject(IllegalArgumentException("derivation path can't be null"))
 
         UportHDSigner().computeAddressForPath(
-                reactApplicationContext,
+                currentActivity ?: reactApplicationContext,
                 rootAddr,
                 hdPath,
                 prompt ?: ""
@@ -141,7 +141,7 @@ class RNUportHDSignerModule(reactContext: ReactApplicationContext)
                 IllegalArgumentException("root address can't be null"))
 
         UportHDSigner().showHDSeed(
-                reactApplicationContext,
+                currentActivity ?: reactApplicationContext,
                 rootAddr,
                 prompt ?: ""
         ) { err, phrase ->
@@ -177,7 +177,7 @@ class RNUportHDSignerModule(reactContext: ReactApplicationContext)
         seed!!
 
         UportHDSigner().importHDSeed(
-                reactApplicationContext,
+                currentActivity ?: reactApplicationContext,
                 keyLevel,
                 seed
         ) { err, address, pubKey ->
@@ -352,7 +352,7 @@ class RNUportHDSignerModule(reactContext: ReactApplicationContext)
     fun listSeedAddresses(promise: Promise?) {
         promise!!
 
-        val addresses = UportHDSigner().allHDRoots(reactApplicationContext) 
+        val addresses = UportHDSigner().allHDRoots(currentActivity ?: reactApplicationContext)
         val ret = WritableNativeArray()
         addresses.forEach { ret.pushString(it) }
         promise.resolve(ret)
