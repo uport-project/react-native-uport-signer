@@ -4,11 +4,10 @@ import { Buffer } from 'buffer';
 
 const RNUportSigner = NativeModules.RNUportSignerModule;
 const RNUportHDSigner = NativeModules.RNUportHDSignerModule;
-const DerivationPathRoot = RNUportHDSigner.UPORT_ROOT_DERIVATION_PATH;
 
-function getSignerForAddress(address, derivationPath = DerivationPathRoot, userPrompt = "") {
+function getSignerForHDPath(seedAlias, derivationPath = RNUportHDSigner.UPORT_ROOT_DERIVATION_PATH, userPrompt = "") {
   return async (data) => {
-    const { v, r, s } = await RNUportHDSigner.signJwt(address,
+    const { v, r, s } = await RNUportHDSigner.signJwt(seedAlias,
       derivationPath,
       Buffer.from(data).toString('base64'),
       userPrompt);
@@ -21,10 +20,4 @@ function getSignerForAddress(address, derivationPath = DerivationPathRoot, userP
   }
 }
 
-function constructPath(hdIndex = 0, acctIndex = 0, recovery = 0) {
-  return `m/7696500'/${hdIndex}'/${acctIndex}'/${recovery}'`
-}
-
-
-
-export { RNUportSigner, RNUportHDSigner, getSignerForAddress, constructPath };
+export { RNUportSigner, RNUportHDSigner, getSignerForHDPath };
