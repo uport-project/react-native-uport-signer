@@ -146,18 +146,13 @@
 /* Begin PBXFileReference section */
 		131621F73FEEB1045AB20E97 /* Pods-RNUportSigner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNUportSigner.release.xcconfig"; path = "Pods/Target Support Files/Pods-RNUportSigner/Pods-RNUportSigner.release.xcconfig"; sourceTree = "<group>"; };
 		134814201AA4EA6300B7C361 /* libRNUportSigner.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNUportSigner.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		30D30C57A394A138520F8C54 /* libPods-RNUportSigner.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-RNUportSigner.a"; path = "/Users/aldigjoka/Library/Developer/Xcode/DerivedData/RNUportSigner-cikeyixdyutlcabhjofdmewpxarw/Build/Products/Debug-iphonesimulator/libPods-RNUportSigner.a"; sourceTree = "<absolute>"; };
 		5C6A72B89D2D4CE04318AA54 /* libPods-RNUportSigner.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNUportSigner.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3E7B5881CC2AC0600A0062D /* RNUportSigner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNUportSigner.h; sourceTree = "<group>"; };
 		B3E7B5891CC2AC0600A0062D /* RNUportSigner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNUportSigner.m; sourceTree = "<group>"; };
 		C76375F975B3A061DFA13B0E /* Pods-RNUportSigner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNUportSigner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RNUportSigner/Pods-RNUportSigner.debug.xcconfig"; sourceTree = "<group>"; };
-		C864D91F21FB9C9100DDB008 /* libCoreEthereum.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCoreEthereum.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		C864D92121FB9C9500DDB008 /* libUPTEthereumSigner.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libUPTEthereumSigner.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8796A7421FF97AE004EB8E1 /* UPTEthereumSigner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UPTEthereumSigner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8796AF421FFB0AC004EB8E1 /* UPTEthereumSigner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UPTEthereumSigner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8796AF621FFB0B0004EB8E1 /* CoreEthereum.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CoreEthereum.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C8796B0021FFB524004EB8E1 /* libISO8601DateFormatter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libISO8601DateFormatter.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		C8796B0221FFB528004EB8E1 /* libCoreEthereum.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCoreEthereum.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8796B0421FFB52F004EB8E1 /* libCoreEthereum.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCoreEthereum.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8796B0621FFB546004EB8E1 /* libUPTEthereumSigner.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libUPTEthereumSigner.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8796B0821FFB54A004EB8E1 /* libValet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libValet.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -221,14 +216,9 @@
 				C8796B0821FFB54A004EB8E1 /* libValet.a */,
 				C8796B0621FFB546004EB8E1 /* libUPTEthereumSigner.a */,
 				C8796B0421FFB52F004EB8E1 /* libCoreEthereum.a */,
-				C8796B0221FFB528004EB8E1 /* libCoreEthereum.a */,
-				C8796B0021FFB524004EB8E1 /* libISO8601DateFormatter.a */,
 				C8796AF621FFB0B0004EB8E1 /* CoreEthereum.framework */,
 				C8796AF421FFB0AC004EB8E1 /* UPTEthereumSigner.framework */,
 				C8796A7421FF97AE004EB8E1 /* UPTEthereumSigner.framework */,
-				C864D92121FB9C9500DDB008 /* libUPTEthereumSigner.a */,
-				C864D91F21FB9C9100DDB008 /* libCoreEthereum.a */,
-				30D30C57A394A138520F8C54 /* libPods-RNUportSigner.a */,
 				5C6A72B89D2D4CE04318AA54 /* libPods-RNUportSigner.a */,
 			);
 			name = Frameworks;
@@ -305,6 +295,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 58B511D21A9E6C8500147676;
