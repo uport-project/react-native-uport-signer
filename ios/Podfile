@@ -7,6 +7,5 @@ target 'RNUportSigner' do
 
   # Pods for RNUportSigner
   pod 'UPTEthereumSigner'
-  # pod 'CoreEthereum'
-
+  pod 'CoreEthereum', :git => 'https://github.com/wjmelements/CoreEthereum.git', :tag => '1.0.6'
 end

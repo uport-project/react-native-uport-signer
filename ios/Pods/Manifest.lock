@@ -1,5 +1,5 @@
 PODS:
-  - CoreEthereum (1.0.4):
+  - CoreEthereum (1.0.6):
     - ISO8601DateFormatter
   - ISO8601DateFormatter (0.8)
   - UPTEthereumSigner (1.1.2):
@@ -8,21 +8,31 @@ PODS:
   - Valet (2.4.2)
 
 DEPENDENCIES:
+  - CoreEthereum (from `https://github.com/wjmelements/CoreEthereum.git`, tag `1.0.6`)
   - UPTEthereumSigner
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - CoreEthereum
     - ISO8601DateFormatter
     - UPTEthereumSigner
     - Valet
 
+EXTERNAL SOURCES:
+  CoreEthereum:
+    :git: https://github.com/wjmelements/CoreEthereum.git
+    :tag: 1.0.6
+
+CHECKOUT OPTIONS:
+  CoreEthereum:
+    :git: https://github.com/wjmelements/CoreEthereum.git
+    :tag: 1.0.6
+
 SPEC CHECKSUMS:
-  CoreEthereum: 25a58cd277d76ac3272d7e0bc6beea872175d587
+  CoreEthereum: 7b8a1f0bd91f389a3e4b1b0344fa0b3f84e1e205
   ISO8601DateFormatter: 4551b6ce4f83185425f583b0b3feb3c7b59b942c
   UPTEthereumSigner: 1b122fd74ac16239cdef78049541be69789e0103
   Valet: 14463ef24fab8fd5809044ecedb61484b799fdd6
 
-PODFILE CHECKSUM: 8fbd1a95b0e254752c332bb8f4424dcc0dd53b69
+PODFILE CHECKSUM: 1ba3cdfc45314b1743dc535a9b3a98c1a26d2f86
 
 COCOAPODS: 1.5.3
