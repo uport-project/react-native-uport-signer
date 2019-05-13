@@ -9,7 +9,7 @@
 #import <Valet/Valet.h>
 #import "EthereumSigner.h"
 #import "UPTEthereumSigner.h"
-#import "CoreBitcoin/CoreBitcoin+Categories.h"
+#import "EthCore/CoreBitcoin+Categories.h"
 #import "keccak.h"
 
 NSString *const ReactNativeKeychainProtectionLevelNormal = @"simple";

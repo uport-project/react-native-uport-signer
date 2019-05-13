@@ -1,6 +1,6 @@
 @import Foundation;
 
-#import "CoreBitcoin/BTCKey.h"
+#import "EthCore/BTCKey.h"
 
 NSDictionary *ethereumSignature(BTCKey *keypair, NSData *hash, NSData *chainId);
 NSDictionary *jwtSignature(BTCKey *keypair, NSData *hash);
