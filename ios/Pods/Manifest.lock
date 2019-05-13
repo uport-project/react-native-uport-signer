@@ -2,36 +2,27 @@ PODS:
   - EthCore (1.0.9):
     - ISO8601DateFormatter
   - ISO8601DateFormatter (0.8)
-  - UPTEthereumSigner (1.1.2):
-    - EthCore
+  - UPTEthereumSigner (1.1.3):
+    - EthCore (~> 1.0.9)
     - Valet (~> 2.4.2)
   - Valet (2.4.2)
 
 DEPENDENCIES:
-  - UPTEthereumSigner (from `https://github.com/uport-project/UPTEthereumSigner.git`, commit `5afc51d93b24a778cbfc3bd69c44a91f3cb1f5c8`)
+  - UPTEthereumSigner
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - EthCore
     - ISO8601DateFormatter
+    - UPTEthereumSigner
     - Valet
-
-EXTERNAL SOURCES:
-  UPTEthereumSigner:
-    :commit: 5afc51d93b24a778cbfc3bd69c44a91f3cb1f5c8
-    :git: https://github.com/uport-project/UPTEthereumSigner.git
-
-CHECKOUT OPTIONS:
-  UPTEthereumSigner:
-    :commit: 5afc51d93b24a778cbfc3bd69c44a91f3cb1f5c8
-    :git: https://github.com/uport-project/UPTEthereumSigner.git
 
 SPEC CHECKSUMS:
   EthCore: f30384fa193fbb5f1ce1cff1fa4a7f5f93408d01
   ISO8601DateFormatter: 4551b6ce4f83185425f583b0b3feb3c7b59b942c
-  UPTEthereumSigner: 4cad1f859bd1cd639aeffc4931da076b776707ff
+  UPTEthereumSigner: 9b6a4a9f10c8c629c7b2e583909814bb0626f44f
   Valet: 14463ef24fab8fd5809044ecedb61484b799fdd6
 
-PODFILE CHECKSUM: 8f4cd4e28034ced6ff60baf8f9b93fb2477e4aea
+PODFILE CHECKSUM: 8fbd1a95b0e254752c332bb8f4424dcc0dd53b69
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.1

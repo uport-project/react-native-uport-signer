@@ -1,9 +1,8 @@
 CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES
-FRAMEWORK_SEARCH_PATHS = $(inherited) /Applications/Xcode.app/Contents/Developer/Library/Frameworks
+FRAMEWORK_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Library/Frameworks
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_TARGET_SRCROOT}/openssl/include" "${PODS_ROOT}/EthCore/openssl/include" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/EthCore" "${PODS_ROOT}/Headers/Public/ISO8601DateFormatter" "${PODS_ROOT}/Headers/Public/UPTEthereumSigner" "${PODS_ROOT}/Headers/Public/Valet"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/EthCore" "${PODS_ROOT}/Headers/Public/ISO8601DateFormatter" "${PODS_ROOT}/Headers/Public/UPTEthereumSigner" "${PODS_ROOT}/Headers/Public/Valet" "${PODS_TARGET_SRCROOT}/openssl/include" "${PODS_ROOT}/EthCore/openssl/include"
 LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/EthCore" "${PODS_CONFIGURATION_BUILD_DIR}/ISO8601DateFormatter" "${PODS_CONFIGURATION_BUILD_DIR}/UPTEthereumSigner" "${PODS_CONFIGURATION_BUILD_DIR}/Valet"
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/EthCore" -isystem "${PODS_ROOT}/Headers/Public/ISO8601DateFormatter" -isystem "${PODS_ROOT}/Headers/Public/UPTEthereumSigner" -isystem "${PODS_ROOT}/Headers/Public/Valet"
 OTHER_LDFLAGS = $(inherited) -ObjC -l"EthCore" -l"ISO8601DateFormatter" -l"UPTEthereumSigner" -l"Valet" -framework "AVFoundation" -framework "EthCore" -framework "Foundation" -framework "Security"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
