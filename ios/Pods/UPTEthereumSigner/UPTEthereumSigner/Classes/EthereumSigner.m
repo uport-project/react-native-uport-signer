@@ -22,8 +22,8 @@
 
 #import "EthereumSigner.h"
 
-#import "CoreBitcoin/CoreBitcoin+Categories.h"
-#import "CoreBitcoin/BTCKey.h"
+#import "EthCore/CoreBitcoin+Categories.h"
+#import "EthCore/BTCKey.h"
 #include <openssl/bn.h>
 #include <openssl/ec.h>
 #include <openssl/obj_mac.h>

@@ -1,0 +1,1 @@
+../../../../EthCore/EthCore/BTCNetwork.h

@@ -31,7 +31,7 @@ as the name is changed.
 			<key>License</key>
 			<string>WTFPL</string>
 			<key>Title</key>
-			<string>CoreEthereum</string>
+			<string>EthCore</string>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 		</dict>

@@ -1,1 +1,0 @@
-../../../../../../CoreEthereum/openssl/include/openssl/stack.h
