@@ -1,0 +1,1 @@
+../../../../EthCore/EthCore/BTCErrors.h

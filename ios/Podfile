@@ -6,7 +6,7 @@ target 'RNUportSigner' do
   # use_frameworks!
 
   # Pods for RNUportSigner
-  pod 'UPTEthereumSigner'
+  pod 'UPTEthereumSigner', :git => 'https://github.com/uport-project/UPTEthereumSigner.git', :commit => '5afc51d93b24a778cbfc3bd69c44a91f3cb1f5c8'
   # pod 'CoreEthereum'
 
 end

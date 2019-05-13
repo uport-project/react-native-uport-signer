@@ -19,9 +19,9 @@
 #import <Foundation/Foundation.h>
 
 #import "RNUportSigner.h"
-#import "CoreBitcoin/CoreBitcoin.h"
-#import "CoreBitcoin/CoreBitcoin+Categories.h"
-#import <CoreEthereum/openssl/include/openssl/rand.h>
+#import "EthCore/EthCore.h"
+#import "EthCore/CoreBitcoin+Categories.h"
+#import <EthCore/openssl/include/openssl/rand.h>
 #import "UPTEthereumSigner.h"
 #import <React/RCTDefines.h>
 

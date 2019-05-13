@@ -8,9 +8,9 @@
 
 #import "UPTHDSigner.h"
 #import "EthereumSigner.h"
-#import "CoreBitcoin/BTCMnemonic.h"
+#import "EthCore/BTCMnemonic.h"
 #import "keccak.h"
-#import "CoreBitcoin/CoreBitcoin+Categories.h"
+#import "EthCore/CoreBitcoin+Categories.h"
 #import <Valet/Valet.h>
 
 // https://github.com/ethereum/EIPs/issues/84
