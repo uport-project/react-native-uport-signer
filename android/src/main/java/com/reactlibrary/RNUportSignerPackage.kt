@@ -32,8 +32,4 @@ class RNUportSignerPackage : ReactPackage {
         return emptyList()
     }
 
-    override fun createJSModules(): List<Class<out JavaScriptModule>> {
-        return emptyList()
-    }
-
 }
