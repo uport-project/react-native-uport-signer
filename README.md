@@ -216,6 +216,9 @@ RNUportSigner.signTx(address,
 ```
 
 ## Changelog
+* 1.3.2
+  - [Android] remove createJSModules override to work with react-native > 0.47 
+  
 * 1.3.1
   - [iOS] fix search path for valet
 
