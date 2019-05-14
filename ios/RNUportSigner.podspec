@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "RNUportSigner"
-  s.version      = "1.0.0"
+  s.version      = "1.3.1"
   s.summary      = "RNUportSigner"
   s.description  = <<-DESC
                   RNUportSigner
