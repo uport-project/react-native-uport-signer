@@ -1,1 +1,0 @@
-../../../UPTEthereumSigner/UPTEthereumSigner/Classes/EthereumSigner.h

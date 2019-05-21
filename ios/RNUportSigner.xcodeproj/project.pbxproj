@@ -7,13 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4CFEC7DD3F11C32F012594D7 /* libPods-RNUportSigner.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C6A72B89D2D4CE04318AA54 /* libPods-RNUportSigner.a */; };
 		B3E7B58A1CC2AC0600A0062D /* RNUportSigner.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RNUportSigner.m */; };
-		C8464A5C2289CC9800CF2939 /* libEthCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8464A5B2289CC9800CF2939 /* libEthCore.a */; };
-		C8796B0721FFB546004EB8E1 /* libUPTEthereumSigner.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8796B0621FFB546004EB8E1 /* libUPTEthereumSigner.a */; };
-		C8796B0921FFB54A004EB8E1 /* libValet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8796B0821FFB54A004EB8E1 /* libValet.a */; };
-		C8796B0B21FFB54C004EB8E1 /* libISO8601DateFormatter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8796B0A21FFB54C004EB8E1 /* libISO8601DateFormatter.a */; };
 		C8936FD4221A96CF004EE464 /* RNUportHDSigner.m in Sources */ = {isa = PBXBuildFile; fileRef = C8936FD3221A96CF004EE464 /* RNUportHDSigner.m */; };
+		C8BCE8C92294ADBF004F834B /* CoreEth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8BCE8BD2294ABFE004F834B /* CoreEth.framework */; };
+		C8BCE8CA2294ADC2004F834B /* openssl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8BCE8C12294AC05004F834B /* openssl.framework */; };
+		C8BCE8CB2294ADC8004F834B /* UPTEthereumSigner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8BCE8C72294AC12004F834B /* UPTEthereumSigner.framework */; };
+		C8BCE8CD2294ADCB004F834B /* Valet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8BCE8CC2294ADCB004F834B /* Valet.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -144,27 +143,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		131621F73FEEB1045AB20E97 /* Pods-RNUportSigner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNUportSigner.release.xcconfig"; path = "Pods/Target Support Files/Pods-RNUportSigner/Pods-RNUportSigner.release.xcconfig"; sourceTree = "<group>"; };
 		134814201AA4EA6300B7C361 /* libRNUportSigner.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNUportSigner.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		30D30C57A394A138520F8C54 /* libPods-RNUportSigner.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-RNUportSigner.a"; path = "/Users/aldigjoka/Library/Developer/Xcode/DerivedData/RNUportSigner-cikeyixdyutlcabhjofdmewpxarw/Build/Products/Debug-iphonesimulator/libPods-RNUportSigner.a"; sourceTree = "<absolute>"; };
-		5C6A72B89D2D4CE04318AA54 /* libPods-RNUportSigner.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNUportSigner.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3E7B5881CC2AC0600A0062D /* RNUportSigner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNUportSigner.h; sourceTree = "<group>"; };
 		B3E7B5891CC2AC0600A0062D /* RNUportSigner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNUportSigner.m; sourceTree = "<group>"; };
-		C76375F975B3A061DFA13B0E /* Pods-RNUportSigner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNUportSigner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RNUportSigner/Pods-RNUportSigner.debug.xcconfig"; sourceTree = "<group>"; };
-		C8464A5B2289CC9800CF2939 /* libEthCore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libEthCore.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		C864D91F21FB9C9100DDB008 /* libCoreEthereum.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCoreEthereum.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		C864D92121FB9C9500DDB008 /* libUPTEthereumSigner.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libUPTEthereumSigner.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		C8796A7421FF97AE004EB8E1 /* UPTEthereumSigner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UPTEthereumSigner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C8796AF421FFB0AC004EB8E1 /* UPTEthereumSigner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UPTEthereumSigner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C8796AF621FFB0B0004EB8E1 /* CoreEthereum.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CoreEthereum.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C8796B0021FFB524004EB8E1 /* libISO8601DateFormatter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libISO8601DateFormatter.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		C8796B0221FFB528004EB8E1 /* libCoreEthereum.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCoreEthereum.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		C8796B0421FFB52F004EB8E1 /* libCoreEthereum.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCoreEthereum.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		C8796B0621FFB546004EB8E1 /* libUPTEthereumSigner.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libUPTEthereumSigner.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		C8796B0821FFB54A004EB8E1 /* libValet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libValet.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		C8796B0A21FFB54C004EB8E1 /* libISO8601DateFormatter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libISO8601DateFormatter.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8936FD3221A96CF004EE464 /* RNUportHDSigner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNUportHDSigner.m; sourceTree = "<group>"; };
 		C8936FD5221A96E6004EE464 /* RNUportHDSigner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNUportHDSigner.h; sourceTree = "<group>"; };
+		C8BCE8BD2294ABFE004F834B /* CoreEth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreEth.framework; path = Carthage/Build/iOS/CoreEth.framework; sourceTree = "<group>"; };
+		C8BCE8C12294AC05004F834B /* openssl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = openssl.framework; path = Carthage/Build/iOS/openssl.framework; sourceTree = "<group>"; };
+		C8BCE8C72294AC12004F834B /* UPTEthereumSigner.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UPTEthereumSigner.framework; path = Carthage/Build/iOS/UPTEthereumSigner.framework; sourceTree = "<group>"; };
+		C8BCE8CC2294ADCB004F834B /* Valet.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Valet.framework; path = Carthage/Build/iOS/Valet.framework; sourceTree = "<group>"; };
 		C8BD4E4121E8024400734B19 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -173,11 +160,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8796B0B21FFB54C004EB8E1 /* libISO8601DateFormatter.a in Frameworks */,
-				C8796B0921FFB54A004EB8E1 /* libValet.a in Frameworks */,
-				C8464A5C2289CC9800CF2939 /* libEthCore.a in Frameworks */,
-				C8796B0721FFB546004EB8E1 /* libUPTEthereumSigner.a in Frameworks */,
-				4CFEC7DD3F11C32F012594D7 /* libPods-RNUportSigner.a in Frameworks */,
+				C8BCE8C92294ADBF004F834B /* CoreEth.framework in Frameworks */,
+				C8BCE8CA2294ADC2004F834B /* openssl.framework in Frameworks */,
+				C8BCE8CD2294ADCB004F834B /* Valet.framework in Frameworks */,
+				C8BCE8CB2294ADC8004F834B /* UPTEthereumSigner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,15 +178,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1C07DC4DB0315296CCA2703C /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				C76375F975B3A061DFA13B0E /* Pods-RNUportSigner.debug.xcconfig */,
-				131621F73FEEB1045AB20E97 /* Pods-RNUportSigner.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
@@ -210,7 +187,6 @@
 				C8936FD5221A96E6004EE464 /* RNUportHDSigner.h */,
 				C8936FD3221A96CF004EE464 /* RNUportHDSigner.m */,
 				134814211AA4EA7D00B7C361 /* Products */,
-				1C07DC4DB0315296CCA2703C /* Pods */,
 				7B7F5A76F879F1F8BAAE5568 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -218,20 +194,10 @@
 		7B7F5A76F879F1F8BAAE5568 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C8464A5B2289CC9800CF2939 /* libEthCore.a */,
-				C8796B0A21FFB54C004EB8E1 /* libISO8601DateFormatter.a */,
-				C8796B0821FFB54A004EB8E1 /* libValet.a */,
-				C8796B0621FFB546004EB8E1 /* libUPTEthereumSigner.a */,
-				C8796B0421FFB52F004EB8E1 /* libCoreEthereum.a */,
-				C8796B0221FFB528004EB8E1 /* libCoreEthereum.a */,
-				C8796B0021FFB524004EB8E1 /* libISO8601DateFormatter.a */,
-				C8796AF621FFB0B0004EB8E1 /* CoreEthereum.framework */,
-				C8796AF421FFB0AC004EB8E1 /* UPTEthereumSigner.framework */,
-				C8796A7421FF97AE004EB8E1 /* UPTEthereumSigner.framework */,
-				C864D92121FB9C9500DDB008 /* libUPTEthereumSigner.a */,
-				C864D91F21FB9C9100DDB008 /* libCoreEthereum.a */,
-				30D30C57A394A138520F8C54 /* libPods-RNUportSigner.a */,
-				5C6A72B89D2D4CE04318AA54 /* libPods-RNUportSigner.a */,
+				C8BCE8BD2294ABFE004F834B /* CoreEth.framework */,
+				C8BCE8C12294AC05004F834B /* openssl.framework */,
+				C8BCE8CC2294ADCB004F834B /* Valet.framework */,
+				C8BCE8C72294AC12004F834B /* UPTEthereumSigner.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -274,7 +240,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 58B511EF1A9E6C8500147676 /* Build configuration list for PBXNativeTarget "RNUportSigner" */;
 			buildPhases = (
-				B16E63EEDAA094903F7DB36D /* [CP] Check Pods Manifest.lock */,
 				58B511D71A9E6C8500147676 /* Sources */,
 				58B511D81A9E6C8500147676 /* Frameworks */,
 				58B511D91A9E6C8500147676 /* CopyFiles */,
@@ -441,31 +406,6 @@
 		};
 /* End PBXReferenceProxy section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		B16E63EEDAA094903F7DB36D /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Podfile.lock",
-				"${SRCROOT}/Pods/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RNUportSigner-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${SRCROOT}/Podfile.lock\" \"${SRCROOT}/Pods/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		58B511D71A9E6C8500147676 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -562,8 +502,11 @@
 		};
 		58B511F01A9E6C8500147676 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C76375F975B3A061DFA13B0E /* Pods-RNUportSigner.debug.xcconfig */;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -584,8 +527,11 @@
 		};
 		58B511F11A9E6C8500147676 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 131621F73FEEB1045AB20E97 /* Pods-RNUportSigner.release.xcconfig */;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,

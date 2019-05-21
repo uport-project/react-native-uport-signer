@@ -1,0 +1,4 @@
+github "square/Valet" "2.4.2"
+github "uport-project/UPTEthereumSigner" "de4e4f76100deac7dd6cb3a46ad9212bf0d82f54"
+github "uport-project/openssl" "v1.0.1e"
+github "uport-project/uport-ios-core-eth" "v1.0.0"

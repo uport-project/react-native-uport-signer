@@ -1,1 +1,0 @@
-../../../../EthCore/EthCore/BTCTransactionInput.h
