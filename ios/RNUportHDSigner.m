@@ -17,7 +17,8 @@
 //
 
 #import "RNUportHDSigner.h"
-#import "UPTHDSigner.h"
+//#import "UPTHDSigner.h"
+@import UPTEthereumSigner/UPTHDSigner;
 #import <React/RCTDefines.h>
 //#import "UPTHDSigner+Utils.h"
 
