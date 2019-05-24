@@ -42,6 +42,7 @@ repositories {
 dependencies {
     implementation 'com.facebook.react:react-native:+'
 
-    api "com.github.uport-project.uport-android-sdk:signer:v0.4.2"
+    api "com.github.uport-project:uport-android-signer:0.3.1"
+    api "com.github.uport-project.kotlin-common:signer-common:0.1.1"
 }
   
