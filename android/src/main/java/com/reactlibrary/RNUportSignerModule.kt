@@ -16,7 +16,7 @@ import com.uport.sdk.signer.UportSigner.Companion.ERR_ENCODING_ERROR
 import com.uport.sdk.signer.UportSigner.Companion.asGenericLabel
 import com.uport.sdk.signer.UportSigner.Companion.asSeedLabel
 import com.uport.sdk.signer.encryption.KeyProtection.Level
-import com.uport.sdk.signer.keyToBase64
+import me.uport.sdk.signer.keyToBase64
 
 /**
  * This module deals with creating, importing, and using private keys.

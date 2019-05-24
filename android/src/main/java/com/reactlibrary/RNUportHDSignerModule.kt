@@ -12,11 +12,11 @@ import com.uport.sdk.signer.UportHDSigner
 import com.uport.sdk.signer.UportSigner
 import com.uport.sdk.signer.UportSigner.Companion.ERR_BLANK_KEY
 import com.uport.sdk.signer.encryption.KeyProtection.Level
-import com.uport.sdk.signer.keyToBase64
 import org.kethereum.bip39.entropyToMnemonic
 import org.kethereum.bip39.model.MnemonicWords
 import org.kethereum.bip39.toKey
 import org.kethereum.bip39.wordlists.WORDLIST_ENGLISH
+import me.uport.sdk.signer.keyToBase64
 import java.util.*
 
 
@@ -279,7 +279,11 @@ class RNUportHDSignerModule(reactContext: ReactApplicationContext)
                 return@signJwtBundle promise.reject(err)
             }
             val map = WritableNativeMap()
-            val rec: Int = if (sigData.v > 1) { (sigData.v + 1) % 2 } else { sigData.v.toInt() }
+            val rec: Int = if (sigData.v > 1) {
+                (sigData.v + 1) % 2
+            } else {
+                sigData.v.toInt()
+            }
             map.putInt("v", rec)
             map.putString("r", sigData.r.keyToBase64())
             map.putString("s", sigData.s.keyToBase64())
