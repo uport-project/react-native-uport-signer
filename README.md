@@ -19,6 +19,10 @@ allprojects {
 }
 ```
 
+3. [optional] If not already done, update the `minSdkVersion` of your `app` to 21
+  This is usually in `android/app/build.gradle` but can also be defined in `android/build.gradle`
+depending on when your project was created
+
 ### Manual installation
 
 
