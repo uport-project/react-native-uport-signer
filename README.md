@@ -220,6 +220,9 @@ RNUportSigner.signTx(address,
 ```
 
 ## Changelog
+* 1.3.4
+  - [Android] bugfix - duplicate classes error
+  
 * 1.3.3
   - [Android] bugfix - fix silent errors when signing JWT
    
