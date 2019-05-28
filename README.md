@@ -19,6 +19,10 @@ allprojects {
 }
 ```
 
+3. [optional] If not already done, update the `minSdkVersion` of your `app` to 21
+  This is usually in `android/app/build.gradle` but can also be defined in `android/build.gradle`
+depending on when your project was created
+
 ### Manual installation
 
 
@@ -216,6 +220,9 @@ RNUportSigner.signTx(address,
 ```
 
 ## Changelog
+* 1.3.4
+  - [Android] bugfix - duplicate classes error
+  
 * 1.3.3
   - [Android] bugfix - fix silent errors when signing JWT
    
