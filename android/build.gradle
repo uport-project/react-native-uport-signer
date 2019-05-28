@@ -43,6 +43,7 @@ dependencies {
     implementation 'com.facebook.react:react-native:+'
 
     api "com.github.uport-project:uport-android-signer:0.3.1"
-    api "com.github.uport-project.kotlin-common:signer-common:0.1.1"
+
+    testImplementation "junit:junit:4.12"
 }
   
