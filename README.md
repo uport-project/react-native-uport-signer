@@ -1,4 +1,7 @@
 
+[![npm](https://img.shields.io/npm/dt/react-native-uport-signer.svg)](https://www.npmjs.com/package/react-native-uport-signer)
+[![npm](https://img.shields.io/npm/v/react-native-uport-signer.svg)](https://www.npmjs.com/package/react-native-uport-signer)
+
 # react-native-uport-signer
 
 ## Getting started
@@ -71,8 +74,40 @@ project(':react-native-uport-signer').projectDir = new File(rootProject.projectD
   This is usually in `android/app/build.gradle` but can also be defined in `android/build.gradle`
 depending on when your project was created
 
+## Use with uport-credentials
+In order to use uport-credentials in react-native you need to provide a global buffer due to some sub dependencies using it. 
 
-## HD Signer Usage
+``` bash
+$ yarn add uport-credentials
+```
+
+Example creating and sending a verification to the uport app
+```javascript
+import { Linking } from 'react-native'
+import { RNUportHDSigner, getSignerForHDPath } from 'react-native-uport-signer'
+import { Credentials } from 'uport-credentials'
+
+RNUportHDSigner.createSeed().then(seed => {
+
+  const credentialsParams = {}
+  // Get Signer function to be used by credentials, address given by RNUportHDSigner
+  credentialsParams.signer = getSignerForHDPath(seed.address)
+  // set did of the issuer
+  credentialsParams.did = `did:ethr:${seed.address}`
+
+  const cred = new Credentials(credentialsParams)
+
+  cred.createVerification({
+    sub: subject, //Address of receiver of the verification
+    claim: {name: 'John Smith'}
+  }).then(verification => {
+    const url = `https://id.uport.me/req/${verification}` 
+    Linking.openURL(url).catch((err) => console.error('An error occurred', err));
+  })
+})
+```
+
+## General HD Signer Usage
 
 `RNUportHDSigner` provides a mechanism of importing or creating seeds that can be used to derive
 keys for signing.
