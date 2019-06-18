@@ -1,7 +1,6 @@
 
 import { NativeModules } from 'react-native';
-
-global.Buffer = global.Buffer || require('buffer').Buffer
+import { Buffer } from 'buffer';
 
 const RNUportSigner = NativeModules.RNUportSignerModule;
 const RNUportHDSigner = NativeModules.RNUportHDSignerModule;
