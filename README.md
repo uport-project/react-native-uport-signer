@@ -255,6 +255,9 @@ RNUportSigner.signTx(address,
 ```
 
 ## Changelog
+* 1.4.4
+  - New method named `getSignerForHDPath` which returns a signing method to be passed into uport-credentials as a parameter
+  
 * 1.3.4
   - [Android] bugfix - duplicate classes error
   
