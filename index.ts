@@ -2,11 +2,11 @@
 import { NativeModules } from 'react-native';
 import { Buffer } from 'buffer';
 
-const RNUportSigner = NativeModules.RNUportSignerModule;
-const RNUportHDSigner = NativeModules.RNUportHDSignerModule;
+const RNUportSigner: any = NativeModules.RNUportSignerModule;
+const RNUportHDSigner: any = NativeModules.RNUportHDSignerModule;
 
-function getSignerForHDPath(seedAlias, derivationPath = RNUportHDSigner.UPORT_ROOT_DERIVATION_PATH, userPrompt = "") {
-  return async (data) => {
+function getSignerForHDPath(seedAlias: string, derivationPath: string = RNUportHDSigner.UPORT_ROOT_DERIVATION_PATH, userPrompt: string = "") {
+  return async (data: string) => {
     const { v, r, s } = await RNUportHDSigner.signJwt(seedAlias,
       derivationPath,
       Buffer.from(data).toString('base64'),
