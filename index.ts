@@ -5,7 +5,7 @@ import { Buffer } from 'buffer';
 const RNUportSigner: any = NativeModules.RNUportSignerModule;
 const RNUportHDSigner: any = NativeModules.RNUportHDSignerModule;
 
-function getSignerForHDPath(seedAlias: string, derivationPath: string = RNUportHDSigner.UPORT_ROOT_DERIVATION_PATH, userPrompt: string = "") {
+const getSignerForHDPath = (seedAlias: string, derivationPath: string = RNUportHDSigner.UPORT_ROOT_DERIVATION_PATH, userPrompt = ""): object => {
   return async (data: string) => {
     const { v, r, s } = await RNUportHDSigner.signJwt(seedAlias,
       derivationPath,
