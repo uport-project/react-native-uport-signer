@@ -125,8 +125,8 @@ RCT_EXPORT_METHOD(privateKeyForPath:(NSString *)rootAddress derivationPath:(NSSt
     }];
 }
 
-RCT_EXPORT_METHOD(deleteSeed:(NSString *)phrase resolve:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) {
-    [UPTHDSigner deleteSeed:phrase callback:^(BOOL deleted, NSError *error) {
+RCT_EXPORT_METHOD(deleteSeed:(NSString *)rootEthereumAddress resolve:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) {
+    [UPTHDSigner deleteSeed:rootEthereumAddress callback:^(BOOL deleted, NSError *error) {
         if ( !error ) {
             //            resolve( [NSNumber numberWithBool:deleted] );
             resolve( nil );
