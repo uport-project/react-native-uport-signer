@@ -255,14 +255,19 @@ RNUportSigner.signTx(address,
 ```
 
 ## Changelog
+
+* 1.4.5
+  - [Android] bugfix - IllegalStateException when using `prompt` without fingerprint sensor (#30)
+
 * 1.4.4
-  - New method named `getSignerForHDPath` which returns a signing method to be passed into uport-credentials as a parameter
+  - New method named `getSignerForHDPath` which returns a signing method to be passed into 
+  `uport-credentials` as a parameter
   
 * 1.3.4
-  - [Android] bugfix - duplicate classes error
+  - [Android] bugfix - duplicate classes error (#22)
   
 * 1.3.3
-  - [Android] bugfix - fix silent errors when signing JWT
+  - [Android] bugfix - fix silent errors when signing JWT (#20)
    
 * 1.3.2
   - [Android] remove createJSModules override to work with react-native > 0.47 
