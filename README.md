@@ -255,7 +255,10 @@ RNUportSigner.signTx(address,
 ```
 
 ## Changelog
-
+* 1.5.0
+  - [iOS] fix parameter name for deleteSeed
+  - Adds typescript support
+  
 * 1.4.5
   - [Android] bugfix - IllegalStateException when using `prompt` without fingerprint sensor (#30)
 

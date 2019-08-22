@@ -1,8 +1,9 @@
 {
   "name": "react-native-uport-signer",
-  "version": "1.4.5",
+  "version": "1.5.0",
   "description": "",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,12 +13,16 @@
   "author": "",
   "license": "Apache 2.0",
   "peerDependencies": {
+    "buffer": "^5.2.1",
     "react": ">= 16.5.0",
-    "react-native": ">= 0.57.0 < 1",
-    "buffer": "^5.2.1"
+    "react-native": ">= 0.57.0 < 1"
   },
   "devDependencies": {
-    "react-native": ">= 0.57.0 < 1"
+    "@types/react": "^16.8.22",
+    "@types/react-native": "^0.57.64",
+    "react-native": ">= 0.57.0 < 1",
+    "react-native-typescript-transformer": "^1.2.12",
+    "typescript": "^3.5.2"
   },
   "dependencies": {
     "buffer": "^5.2.1"
