@@ -1,6 +1,6 @@
 @file:Suppress("unused")
 
-package com.reactlibrary
+package com.uport.signer
 
 import com.facebook.react.ReactPackage
 import com.facebook.react.bridge.JavaScriptModule
@@ -32,4 +32,7 @@ class RNUportSignerPackage : ReactPackage {
         return emptyList()
     }
 
+    override fun createJSModules(): MutableList<Class<out JavaScriptModule>> {
+        return emptyList<Class<JavaScriptModule>>().toMutableList()
+    }
 }

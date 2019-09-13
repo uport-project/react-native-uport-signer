@@ -66,7 +66,7 @@ project(':react-native-uport-signer').projectDir = new File(rootProject.projectD
 ```
 
 4. Open up `android/app/src/main/java/[...]/MainActivity.java`
-  - Add `import com.reactlibrary.RNUportSignerPackage;` to the imports at the top of the file
+  - Add `import com.uport.signer.RNUportSignerPackage;` to the imports at the top of the file
   - Add `new RNUportSignerPackage()` to the list returned by the `getPackages()` method
 
 
