@@ -32,7 +32,4 @@ class RNUportSignerPackage : ReactPackage {
         return emptyList()
     }
 
-    override fun createJSModules(): MutableList<Class<out JavaScriptModule>> {
-        return emptyList<Class<JavaScriptModule>>().toMutableList()
-    }
 }
