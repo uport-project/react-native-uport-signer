@@ -254,6 +254,10 @@ RNUportSigner.signTx(address,
 		
 ```
 
+## Contributions welcome
+
+Please run `yarn install` after checkout to get an up-to-speed dev environment for this library.
+
 ## Changelog
 * 1.5.0
   - [iOS] fix parameter name for deleteSeed
