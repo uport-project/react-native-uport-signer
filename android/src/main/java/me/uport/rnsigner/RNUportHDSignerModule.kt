@@ -1,6 +1,6 @@
 @file:Suppress("unused", "KDocUnresolvedReference", "TooManyFunctions")
 
-package com.uport.signer
+package me.uport.rnsigner
 
 import android.text.TextUtils
 import com.facebook.react.bridge.Promise

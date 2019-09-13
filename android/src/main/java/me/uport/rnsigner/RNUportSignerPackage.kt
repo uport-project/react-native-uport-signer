@@ -1,6 +1,6 @@
 @file:Suppress("unused")
 
-package com.uport.signer
+package me.uport.rnsigner
 
 import com.facebook.react.ReactPackage
 import com.facebook.react.bridge.JavaScriptModule

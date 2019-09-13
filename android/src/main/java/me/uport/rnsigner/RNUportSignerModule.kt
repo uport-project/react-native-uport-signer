@@ -1,6 +1,6 @@
 @file:Suppress("unused", "TooManyFunctions")
 
-package com.uport.signer
+package me.uport.rnsigner
 
 import android.content.Context
 import android.content.Intent

@@ -1,4 +1,4 @@
-package com.uport.signer
+package me.uport.rnsigner
 
 import org.junit.Test
 import java.util.*
