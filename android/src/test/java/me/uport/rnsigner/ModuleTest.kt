@@ -1,4 +1,4 @@
-package com.reactlibrary
+package me.uport.rnsigner
 
 import org.junit.Test
 import java.util.*

@@ -1,6 +1,7 @@
 
 [![npm](https://img.shields.io/npm/dt/react-native-uport-signer.svg)](https://www.npmjs.com/package/react-native-uport-signer)
 [![npm](https://img.shields.io/npm/v/react-native-uport-signer.svg)](https://www.npmjs.com/package/react-native-uport-signer)
+[![CircleCI](https://circleci.com/gh/uport-project/react-native-uport-signer.svg?style=svg)](https://circleci.com/gh/uport-project/react-native-uport-signer)
 
 # react-native-uport-signer
 
@@ -66,7 +67,7 @@ project(':react-native-uport-signer').projectDir = new File(rootProject.projectD
 ```
 
 4. Open up `android/app/src/main/java/[...]/MainActivity.java`
-  - Add `import com.reactlibrary.RNUportSignerPackage;` to the imports at the top of the file
+  - Add `import me.uport.rnsigner.RNUportSignerPackage;` to the imports at the top of the file
   - Add `new RNUportSignerPackage()` to the list returned by the `getPackages()` method
 
 
@@ -254,7 +255,16 @@ RNUportSigner.signTx(address,
 		
 ```
 
+## Contributions welcome
+
+Please run `yarn install` after checkout to get an up-to-speed dev environment for this library.
+
 ## Changelog
+
+* 1.5.1
+  - [Android] bugfix - changed package name to `me.uport.rnsigner` thanks to @VMadalin ( #34 )
+  - support - add simple CI checks (#35)
+   
 * 1.5.0
   - [iOS] fix parameter name for deleteSeed
   - Adds typescript support

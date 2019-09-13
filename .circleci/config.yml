@@ -1,0 +1,84 @@
+version: 2
+jobs:
+  node-dependencies:
+    working_directory: ~/repo
+    docker:
+      - image: circleci/node:8
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - yarn-{{ arch }}-v1-{{ checksum "yarn.lock" }}
+            - yarn-{{ arch }}-v1
+      - run:
+          name: install-dependencies
+          command: yarn
+      - save_cache:
+          key: yarn-{{ arch }}-v1-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn
+      - persist_to_workspace:
+          root: ~/repo
+          paths:
+            - node_modules
+
+  android-dependencies:
+    working_directory: ~/repo/android
+    docker:
+      - image: circleci/android:api-28-node8-alpha
+        environment:
+          ANDROID_HOME: /opt/android/sdk
+          TERM: dumb
+          LC_ALL: en_US.UTF-8
+          LANG: en_US.UTF-8
+    steps:
+      - checkout:
+          path: ~/repo
+      - attach_workspace:
+          at: ~/repo
+      - restore_cache:
+          keys:
+            - android-{{ arch }}-v1-{{ checksum "build.gradle" }}
+            - android-{{ arch }}-v1
+      - run:
+          name: get android dependencies
+          command: ./gradlew dependencies androidDependencies
+      - save_cache:
+          key: android-{{ arch }}-v1-{{ checksum "build.gradle" }}
+          paths:
+            - .gradle
+            - ~/.gradle
+
+  android-test:
+    working_directory: ~/repo/android
+    docker:
+      - image: circleci/android:api-28-node8-alpha
+        environment:
+          ANDROID_HOME: /opt/android/sdk
+          TERM: dumb
+          LC_ALL: en_US.UTF-8
+          LANG: en_US.UTF-8
+    steps:
+      - checkout:
+          path: ~/repo
+      - attach_workspace:
+          at: ~/repo
+      - restore_cache:
+          keys:
+            - android-{{ arch }}-v1-{{ checksum "build.gradle" }}
+            - android-{{ arch }}-v1
+      - run:
+          name: run a simple test to check it compiles
+          command: ./gradlew test
+
+workflows:
+  version: 2
+  run-ci-checks:
+    jobs:
+      - node-dependencies
+      - android-dependencies:
+          requires:
+            - node-dependencies
+      - android-test:
+          requires:
+            - android-dependencies
