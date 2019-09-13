@@ -75,7 +75,7 @@ workflows:
   version: 2
   run-ci-checks:
     jobs:
-      - node-dependencies:
+      - node-dependencies
       - android-dependencies:
           requires:
             - node-dependencies
