@@ -1,6 +1,7 @@
 
 [![npm](https://img.shields.io/npm/dt/react-native-uport-signer.svg)](https://www.npmjs.com/package/react-native-uport-signer)
 [![npm](https://img.shields.io/npm/v/react-native-uport-signer.svg)](https://www.npmjs.com/package/react-native-uport-signer)
+[![CircleCI](https://circleci.com/gh/uport-project/react-native-uport-signer.svg?style=svg)](https://circleci.com/gh/uport-project/react-native-uport-signer)
 
 # react-native-uport-signer
 
@@ -259,6 +260,11 @@ RNUportSigner.signTx(address,
 Please run `yarn install` after checkout to get an up-to-speed dev environment for this library.
 
 ## Changelog
+
+* 1.5.1
+  - [Android] bugfix - changed package name to `me.uport.rnsigner` thanks to @VMadalin ( #34 )
+  - support - add simple CI checks (#35)
+   
 * 1.5.0
   - [iOS] fix parameter name for deleteSeed
   - Adds typescript support
