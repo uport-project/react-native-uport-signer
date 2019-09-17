@@ -261,6 +261,9 @@ Please run `yarn install` after checkout to get an up-to-speed dev environment f
 
 ## Changelog
 
+* 1.5.2
+  - bugfix #36 - build was not called automatically on prepublish ( #37 )
+  
 * 1.5.1
   - [Android] bugfix - changed package name to `me.uport.rnsigner` thanks to @VMadalin ( #34 )
   - support - add simple CI checks (#35)
