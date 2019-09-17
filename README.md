@@ -5,6 +5,8 @@
 
 # react-native-uport-signer
 
+[FAQ and helpdesk support](http://bit.ly/uPort_helpdesk)
+
 ## Getting started
 
 `$ npm install react-native-uport-signer --save`
