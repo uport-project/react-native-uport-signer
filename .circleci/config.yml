@@ -22,6 +22,19 @@ jobs:
           paths:
             - node_modules
 
+  node-checks:
+    working_directory: ~/repo
+    docker:
+      - image: circleci/node:8
+    steps:
+      - checkout:
+          path: ~/repo
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          name: run ts checks
+          command: yarn lint
+
   android-dependencies:
     working_directory: ~/repo/android
     docker:
@@ -76,6 +89,9 @@ workflows:
   run-ci-checks:
     jobs:
       - node-dependencies
+      - node-checks:
+          requires:
+            - node-dependencies
       - android-dependencies:
           requires:
             - node-dependencies
