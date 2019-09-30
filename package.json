@@ -1,7 +1,8 @@
 {
   "name": "react-native-uport-signer",
   "version": "1.5.2",
-  "description": "",
+  "description": "A native signer for your React Native Apps",
+  "homepage": "https://github.com/uport-project/react-native-uport-signer/blob/develop/README.md",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
@@ -13,7 +14,7 @@
   "keywords": [
     "react-native"
   ],
-  "author": "",
+  "author": "team@uport.me",
   "license": "Apache 2.0",
   "peerDependencies": {
     "buffer": "^5.2.1",
