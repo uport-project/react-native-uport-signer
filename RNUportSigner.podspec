@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   
   s.authors      = package['author']
   s.homepage     = package['homepage']
-  s.source       = { :git => "https://github.com/author/RNUportSigner.git", :tag => "v#{s.version}" }
+  s.source       = { :git => "https://github.com/uport-project/react-native-uport-signer", :tag => "v#{s.version}" }
   
   s.ios.deployment_target = '9.0'
   
