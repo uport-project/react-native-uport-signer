@@ -13,14 +13,14 @@ Pod::Spec.new do |s|
   s.homepage     = package['homepage']
   s.source       = { :git => "https://github.com/author/RNUportSigner.git", :tag => "v#{s.version}" }
   
-  s.ios.deployment_target = '9.3'
+  s.ios.deployment_target = '9.0'
   
   s.source_files  = "ios/**/*.{h,m}"
 
   s.pod_target_xcconfig = {
     'HEADER_SEARCH_PATHS' => '"${PODS_ROOT}/EthCore" "${PODS_ROOT}/EthCore/openssl/include"',
   }
-
+  
   s.dependency 'React'
   s.dependency 'UPTEthereumSigner'
 
