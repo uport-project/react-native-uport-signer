@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.homepage     = package['homepage']
   s.source       = { :git => "https://github.com/uport-project/react-native-uport-signer", :tag => "v#{s.version}" }
   
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '9.3'
   
   s.source_files  = "ios/**/*.{h,m}"
 
