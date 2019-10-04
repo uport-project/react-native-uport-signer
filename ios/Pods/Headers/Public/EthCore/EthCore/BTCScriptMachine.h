@@ -1,1 +1,0 @@
-../../../../EthCore/EthCore/BTCScriptMachine.h
