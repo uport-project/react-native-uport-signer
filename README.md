@@ -263,6 +263,9 @@ Please run `yarn install` after checkout to get an up-to-speed dev environment f
 
 ## Changelog
 
+* 1.6.0
+  - [iOS] feature - enable autolink ( #40 )
+  
 * 1.5.2
   - bugfix #36 - build was not called automatically on prepublish ( #37 )
   
