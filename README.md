@@ -211,6 +211,8 @@ RNUportSigner.signTx(address,
 Please run `yarn install` after checkout to get an up-to-speed dev environment for this library.
 
 ## Changelog
+* 1.6.1
+  - [iOS] specify version of UPTEthereumSigner pod
 
 * 1.6.0
   - [iOS] feature - enable autolink ( #40 )
