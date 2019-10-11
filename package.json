@@ -23,8 +23,8 @@
   },
   "devDependencies": {
     "@types/react": "^16.8.22",
-    "@types/react-native": "^0.57.64",
-    "react-native": ">= 0.57.0 < 1",
+    "@types/react-native": "^0.60.0",
+    "react-native": ">= 0.60.5 < 1",
     "react-native-typescript-transformer": "^1.2.12",
     "tslint": "^5.20.0",
     "tslint-react": "^4.0.0",
