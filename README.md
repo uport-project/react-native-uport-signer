@@ -9,9 +9,20 @@
 
 ## Getting started
 
-`$ npm install react-native-uport-signer --save`
+**React Native 60.5+**
 
-### Mostly automatic installation
+Use version 1.6.0 or higher. 
+```
+$ yarn add react-native-uport-signer
+```
+Autolinking will take care of the rest.
+
+**React Native < 60.5**
+
+Use version v1.5.2
+```
+$ yarn add react-native-uport-signer@1.5.2
+```
 
 1. `$ react-native link react-native-uport-signer`
 2. Insert the following line inside the `allprojects.repositories` block in `android/build.gradle`:
