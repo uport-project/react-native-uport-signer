@@ -1,6 +1,6 @@
 {
   "name": "react-native-uport-signer",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "description": "A native signer for your React Native Apps",
   "homepage": "https://github.com/uport-project/react-native-uport-signer/blob/develop/README.md",
   "main": "lib/index.js",
@@ -19,12 +19,12 @@
   "peerDependencies": {
     "buffer": "^5.2.1",
     "react": ">= 16.5.0",
-    "react-native": ">= 0.57.0 < 1"
+    "react-native": ">= 0.60.5 < 1"
   },
   "devDependencies": {
     "@types/react": "^16.8.22",
-    "@types/react-native": "^0.57.64",
-    "react-native": ">= 0.57.0 < 1",
+    "@types/react-native": "^0.60.0",
+    "react-native": ">= 0.60.5 < 1",
     "react-native-typescript-transformer": "^1.2.12",
     "tslint": "^5.20.0",
     "tslint-react": "^4.0.0",
