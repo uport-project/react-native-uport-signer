@@ -1,6 +1,6 @@
 {
   "name": "react-native-uport-signer",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "description": "A native signer for your React Native Apps",
   "homepage": "https://github.com/uport-project/react-native-uport-signer/blob/develop/README.md",
   "main": "lib/index.js",

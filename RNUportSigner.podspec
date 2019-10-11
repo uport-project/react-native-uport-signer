@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
   }
   
   s.dependency 'React'
-  s.dependency 'UPTEthereumSigner'
+  s.dependency 'UPTEthereumSigner', '~> 1.1.5'
 
 
 end
